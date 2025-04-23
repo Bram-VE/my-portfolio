@@ -1,6 +1,7 @@
 import Layout from './layout_template';
 import styles from './home.module.css';
 import codingPicture from '@/assets/coding.jpg';
+import { Link } from 'react-router-dom';
 
 import { useState } from 'react';
 import { DiJava, DiPython, DiPhp, DiDocker } from 'react-icons/di';
@@ -54,8 +55,8 @@ function Home() {
         <section className={styles.ctaSection}>
           <h2>Looking for a developer?</h2>
           <p>Check out my work and get in touch!</p>
-          <a href="/projects" className={styles.ctaButton}>Learn More About My projects</a>
-          <a href="/about" className={styles.ctaButton}>Learn More About Me</a>
+          <Link to="/projects" className={styles.ctaButton}>Learn More About My Projects</Link> 
+          <Link to="/about" className={styles.ctaButton}>Learn More About Me</Link>
         </section>
 
         <section className={styles.skillsSection}>
