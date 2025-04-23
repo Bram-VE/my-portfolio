@@ -161,9 +161,9 @@ function Home() {
                   />
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
-                  <a href={project.link} className={styles.projectButton}>
+                  <Link to={project.link} className={styles.projectButton}>
                     View Full Project
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}
