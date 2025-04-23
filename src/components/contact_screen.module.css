@@ -1,0 +1,60 @@
+.homeContainer {
+    font-family: 'Arial', sans-serif;
+    background-color: transparent;
+    color: #333;
+    padding: 40px 20px;
+    margin: 0 auto;
+    max-width: 75%;
+    line-height: 1.6;
+}
+  
+.introSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+  .introText h1 {
+    font-size: 2.5rem;
+    color: #333;
+  }
+
+  .introText p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  .contactDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .detailItem {
+    margin: 1.5rem 0;
+    text-align: center;
+  }
+  
+  .detailItem h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .detailItem p {
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .detailItem a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+  
+  .detailItem a:hover {
+    text-decoration: underline;
+  }
+  
