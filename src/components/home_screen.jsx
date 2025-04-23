@@ -55,8 +55,10 @@ function Home() {
         <section className={styles.ctaSection}>
           <h2>Looking for a developer?</h2>
           <p>Check out my work and get in touch!</p>
-          <Link to="/projects" className={styles.ctaButton}>Learn More About My Projects</Link> 
-          <Link to="/about" className={styles.ctaButton}>Learn More About Me</Link>
+          <div className={styles.skillsButtons}>
+            <Link to="/projects" className={styles.ctaButton}>Learn More About My Projects</Link> 
+            <Link to="/about" className={styles.ctaButton}>Learn More About Me</Link>
+          </div>
         </section>
 
         <section className={styles.skillsSection}>

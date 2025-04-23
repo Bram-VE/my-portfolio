@@ -15,6 +15,7 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 60px;
+  flex-wrap: wrap;
 }
 
 .introText h1 {
@@ -34,6 +35,27 @@
   width: 20%;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .introSection {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .homeImage {
+    width: 40%;
+    margin-top: 20px;
+  }
+
+  .introText h1 {
+    font-size: 2.5rem;
+  }
+
+  .introText p {
+    font-size: 1rem;
+    max-width: 100%;
+  }
 }
 
 /* Call to Action Section */
@@ -57,6 +79,12 @@
   background-color: #0056b3;
 }
 
+@media (max-width: 768px) {
+  .ctaButton {
+    font-size: 1rem;
+    padding: 12px 25px;
+  }
+}
 
 /* Skills Section */
 .skillsSection {
@@ -74,6 +102,7 @@
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
+  flex-wrap: wrap;
 }
 
 .skillsButtons button {
@@ -91,6 +120,18 @@
 .skillsButtons button:hover {
   background-color: #0056b3;
   transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .skillsButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skillsButtons button {
+    width: 80%;
+    margin-bottom: 15px;
+  }
 }
 
 /* Selected Category Box */
@@ -146,6 +187,14 @@
   color: #0056b3;
 }
 
+@media (max-width: 768px) {
+  .skillItem {
+    width: 45%;
+    margin-bottom: 20px;
+  }
+}
+
+/* Featured Projects Section */
 .featuredProjectsSection {
   margin-top: 4rem;
   text-align: center;
@@ -200,4 +249,27 @@
 
 .projectButton:hover {
   background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .projectsContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .projectCard {
+    width: 90%;
+  }
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footerContent {
+    text-align: center;
+  }
+
+  .footerIcons {
+    justify-content: center;
+    gap: 15px;
+  }
 }
