@@ -157,7 +157,6 @@ function Home() {
                     src={project.image}
                     alt={project.title}
                     className={styles.projectImage}
-                    onClick={() => window.location.href = project.link}
                   />
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
