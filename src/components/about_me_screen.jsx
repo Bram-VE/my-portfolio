@@ -58,8 +58,8 @@ function About() {
             <div className={styles.bar}><div className={`${styles.fill} ${styles.dotnet}`}></div></div>
           </div>
           <div className={styles.skillBar}>
-            <span><FontAwesomeIcon icon={faJava} className={styles.icon} /> Java</span>
-            <div className={styles.bar}><div className={`${styles.fill} ${styles.java}`}></div></div>
+            <span><FontAwesomeIcon icon={faDatabase} className={styles.icon} /> Data</span>
+            <div className={styles.bar}><div className={`${styles.fill} ${styles.data}`}></div></div>
           </div>
           <div className={styles.skillBar}>
             <span><FontAwesomeIcon icon={faPython} className={styles.icon} /> Python</span>
@@ -70,8 +70,8 @@ function About() {
             <div className={styles.bar}><div className={`${styles.fill} ${styles.fullstack}`}></div></div>
           </div>
           <div className={styles.skillBar}>
-            <span><FontAwesomeIcon icon={faDatabase} className={styles.icon} /> Data</span>
-            <div className={styles.bar}><div className={`${styles.fill} ${styles.data}`}></div></div>
+            <span><FontAwesomeIcon icon={faJava} className={styles.icon} /> Java</span>
+            <div className={styles.bar}><div className={`${styles.fill} ${styles.java}`}></div></div>
           </div>
         </section>
 

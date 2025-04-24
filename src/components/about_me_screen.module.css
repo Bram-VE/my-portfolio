@@ -1,166 +1,166 @@
 /* Main Container */
 .aboutContainer {
-    max-width: 75%;
-    margin: auto;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    color: #333; /* Default text color */
-  }
-  
+  max-width: 75%;
+  margin: auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: #333;
+}
+
 /* Boxed Section Styling */
 section {
-    background-color: #d6d9dd; /* Darker grayish-white */
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Softer shadow */
-    animation: fadeInUp 0.6s ease forwards;
-    opacity: 0;
-    transition: transform 0.3s ease;
-  }
-  
-  section:hover {
-    transform: scale(1.01);
-  }
-  
+  background-color: #FF8C42;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+  transition: transform 0.3s ease;
+}
+
+section:hover {
+  transform: scale(1.01);
+}
+
 /* Profile Section */
 .profileSection {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* This centers the content horizontally */
-    gap: 2rem;
-    flex-wrap: wrap;
-    text-align: center; /* Optional: To center the text below the image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.profileImage {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #156082;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Interest List */
+.noBullets {
+  list-style: none;
+  padding: 0;
+}
+
+.noBullets li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.noBullets li:hover {
+  color: #0056b3;
+}
+
+/* Icons */
+.icon {
+  color: #156082;
+  font-size: 1.1rem;
+}
+
+/* Skills Section */
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skillBar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.skillBar span {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  gap: 0.5rem;
+}
+
+.bar {
+  background-color: #333;
+  height: 18px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  border: 2px solid #333;
+}
+
+.fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 1.2s ease-in-out;
+}
+
+/* Adjusted skill percentages with consistent brand coloring */
+.dotnet {
+  width: 95%;
+  background: linear-gradient(to right, #156082, #1a3c60);
+}
+
+.java {
+  width: 60%;
+  background: linear-gradient(to right, #FF8C42, #e65100);
+}
+
+.python {
+  width: 90%;
+  background: linear-gradient(to right, #156082, #004080);
+}
+
+.fullstack {
+  width: 65%;
+  background: linear-gradient(to right, #43a047, #2e7d32);
+}
+
+.data {
+  width: 95%;
+  background: linear-gradient(to right, #fb8c00, #ef6c00);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .aboutContainer {
+    max-width: 95%;
+    padding: 1rem;
+  }
+
+  .profileSection {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
   .profileImage {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #512bd4; /* Accent color */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 100px;
+    height: 100px;
   }
-  
-  
-  /* Interest List */
-  .noBullets {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .noBullets li {
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-size: 1rem;
-    transition: color 0.3s;
-  }
-  
-  .noBullets li:hover {
-    color: #512bd4; /* Accent color */
-  }
-  
-  /* Icons */
-  .icon {
-    color: #512bd4; /* Accent color */
-    font-size: 1.1rem;
-  }
-  
-  /* Skills Section */
-  .skills {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .skillBar {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-  }
-  
-  .skillBar span {
-    display: flex;
-    align-items: center;
-    font-weight: 600;
-    gap: 0.5rem;
-  }
-  
-  .bar {
-    background-color: #e0e0e0; /* Gray background for skill bars */
-    height: 18px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-  }
-  
-  .fill {
-    height: 100%;
-    border-radius: 10px;
-    transition: width 1.2s ease-in-out;
-  }
-  
-  /* Adjusted skill percentages */
-  .dotnet {
-    width: 95%;
-    background: linear-gradient(to right, #512bd4, #673ab7);
-  }
-  
-  .java {
-    width: 60%;
-    background: linear-gradient(to right, #f57c00, #e65100);
-  }
-  
-  .python {
-    width: 90%;
-    background: linear-gradient(to right, #3572A5, #2a6eb5);
-  }
-  
-  .fullstack {
-    width: 65%;
-    background: linear-gradient(to right, #43a047, #388e3c);
-  }
-  
-  .data {
-    width: 95%;
-    background: linear-gradient(to right, #fb8c00, #ef6c00);
-  }
-  
-  /* Animations */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .aboutContainer {
-      max-width: 95%;
-      padding: 1rem;
-    }
-  
-    .profileSection {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-  
-    .profileImage {
-      width: 100px;
-      height: 100px;
-    }
-  }
+}
 
-  /* Existing styles for the About page */
-
+/* Download Section */
 .downloadSection {
   margin-top: 40px;
   text-align: center;
@@ -169,6 +169,7 @@ section {
 .downloadSection h3 {
   font-size: 1.8rem;
   font-weight: bold;
+  color: #156082;
 }
 
 .downloadLinks {
@@ -177,15 +178,17 @@ section {
 
 .downloadButton {
   display: inline-block;
-  background-color: #0066cc;
-  color: white;
+  background-color: #156082;
+  color: #FFEFEF;
   padding: 10px 20px;
   font-size: 1.2rem;
   margin: 10px;
   text-decoration: none;
   border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
 .downloadButton:hover {
-  background-color: #004c99;
+  background-color: #0056b3;
+  color: #333;
 }
