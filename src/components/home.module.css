@@ -1,42 +1,185 @@
-/* Overall page setup */
 .homeContainer {
-  font-family: 'Arial', sans-serif;
-  background-color: transparent;
-  color: #333;
-  padding: 40px 20px;
-  margin: 0 auto;
-  max-width: 75%;
-  line-height: 1.6;
+  animation: fadeIn 1s ease;
+  padding: 2rem;
+  color: #e0e0e0;
 }
 
-/* Intro Section */
+/* Boxed Sections */
+.sectionBox {
+  background: linear-gradient(145deg, #FF8C42, #F4B431); /* Same gradient as hero */
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  margin-bottom: 3rem;
+}
+
 .introSection {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 60px;
-  flex-wrap: wrap;
-  background-color: #FF8C42;
+}
+
+.introText {
+  max-width: 50%;
 }
 
 .introText h1 {
-  font-size: 3rem;
-  color: #333;
-  font-weight: bold;
-  margin-bottom: 15px;
+  font-size: 2.5rem;
+  color: #ffffff;
 }
 
 .introText p {
   font-size: 1.2rem;
-  color: #444;
-  max-width: 500px;
+  margin-top: 1rem;
+  color: #d4d4d4;
 }
 
 .homeImage {
   width: 20%;
+  height: 250px;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
+
+/* Call to Action Section */
+.ctaSection {
+  text-align: center;
+}
+
+.ctaSection h2 {
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.ctaSection p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: #d4d4d4;
+}
+
+.skillsButtons {
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.ctaButton {
+  background-color: #1e2a39;
+  padding: 12px 20px;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: #3a4d71;
+  transform: scale(1.1);
+}
+
+/* Featured Projects Section */
+.projectsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6rem;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  animation: fadeIn 1s ease-out;
+}
+
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  perspective: 1000px;
+}
+
+.projectBox {
+  background: linear-gradient(145deg, #bd662f, #d0992a);
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  padding: 1.5rem;
+  width: 100%;
+  height: 500px; /* Fixed height for uniformity */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.projectBox:hover {
+  transform: translateY(-10px) rotateY(10deg);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+}
+
+.projectImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.projectImage:hover {
+  transform: scale(1.05);
+}
+
+.textContent {
+  margin-top: 1rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: #d1d1d1;
+}
+
+.projectTitle {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #f8f8f8;
+  margin-top: 0;
+  text-align: center;
+}
+
+.projectDescription {
+  font-size: 0.95rem;
+  color: #4d4646;
+  margin-top: 0.5rem;
+  font-style: italic;
+  line-height: 1.4;
+  min-height: 80px;
+}
+
+.buttonContainer {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.projectButton {
+  background-color: #1e2a39;
+  padding: 12px 20px;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.projectButton:hover {
+  background-color: #3a4d71;
+  transform: scale(1.1);
+}
+
+/* Modal and Other Elements... */
 
 @media (max-width: 768px) {
   .introSection {
@@ -45,238 +188,17 @@
   }
 
   .homeImage {
-    width: 40%;
-    margin-top: 20px;
-  }
-
-  .introText h1 {
-    font-size: 2.5rem;
-  }
-
-  .introText p {
-    font-size: 1rem;
-    max-width: 100%;
-  }
-}
-
-/* Call to Action Section */
-.ctaSection {
-  text-align: center;
-  margin-bottom: 60px;
-  background-color: #FF8C42;
-}
-
-.ctaButton {
-  background-color: #156082;
-  color: #FFEFEF;
-  padding: 15px 30px;
-  font-size: 1.2rem;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background-color 0.3s;
-  margin: 10px; /* Add margin here to create space between buttons */
-}
-
-.ctaButton:hover {
-  background-color: #0056b3;
-  color: #333;
-}
-
-@media (max-width: 768px) {
-  .ctaButton {
-    font-size: 1rem;
-    padding: 12px 25px;
-  }
-}
-
-/* Skills Section */
-.skillsSection {
-  text-align: center;
-  background-color: #FF8C42;
-}
-
-.skillsSection h2 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: #156082;
-}
-
-/* Category Buttons */
-.skillsButtons {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 30px;
-  flex-wrap: wrap;
-}
-
-.skillsButtons button {
-  background-color: #156082;
-  color: #FFEFEF;
-  padding: 12px 24px;
-  font-size: 1rem;
-  margin: 0 12px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-.skillsButtons button:hover {
-  background-color: #0056b3;
-  transform: translateY(-3px);
-  color: #333;
-}
-
-@media (max-width: 768px) {
-  .skillsButtons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .skillsButtons button {
+    margin-top: 2rem;
     width: 80%;
-    margin-bottom: 15px;
   }
-}
 
-/* Selected Category Box */
-.selectedCategoryBox {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.selectedCategoryBox h3 {
-  font-size: 1.6rem;
-  color: #156082;
-}
-
-/* Skills List */
-.skillsList {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.skillItem {
-  background-color: #FFEFEF;
-  padding: 20px;
-  border-radius: 10px;
-  width: 230px;
-  text-align: center;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-}
-
-.skillItem p {
-  margin-top: 10px;
-  color: #666;
-  font-size: 0.9rem;
-}
-
-.skillItem svg {
-  font-size: 2.8rem;
-  margin-bottom: 12px;
-  color: #007bff;
-  transition: color 0.3s;
-}
-
-.skillItem:hover {
-  background-color: #f1f1f1;
-  cursor: pointer;
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-.skillItem:hover svg {
-  color: #0056b3;
-}
-
-@media (max-width: 768px) {
-  .skillItem {
-    width: 45%;
-    margin-bottom: 20px;
-  }
-}
-
-/* Featured Projects Section */
-.featuredProjectsSection {
-  margin-top: 4rem;
-  text-align: center;
-  background-color: #FF8C42;
-}
-
-.projectsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.projectCard {
-  width: 300px;
-  background-color: #FFEFEF;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.projectCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.projectBox {
-  padding: 1.5rem;
-  text-align: center;
-}
-
-.projectImage {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  cursor: pointer;
-  border-radius: 8px;
-}
-
-.projectButton {
-  display: inline-block;
-  margin-top: 1rem;
-  background-color: #156082;
-  color: #FFEFEF;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-.projectButton:hover {
-  background-color: #0056b3;
-  color: #333;
-}
-
-@media (max-width: 768px) {
   .projectsContainer {
     flex-direction: column;
     align-items: center;
   }
 
-  .projectCard {
-    width: 90%;
-  }
-}
-
-/* Responsive Footer */
-@media (max-width: 768px) {
-  .footerContent {
-    text-align: center;
-  }
-
-  .footerIcons {
-    justify-content: center;
-    gap: 15px;
+  .ctaButton {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
   }
 }

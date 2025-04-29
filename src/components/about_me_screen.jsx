@@ -1,94 +1,165 @@
+import React, { useState } from 'react';
 import Layout from './layout_template';
 import styles from './about_me_screen.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faGamepad,
-  faPalette,
-  faBookOpen,
-  faGraduationCap,
-  faBullseye,
-  faEnvelope,
-  faDatabase,
-  faGlobe,
-  faDownload
-} from '@fortawesome/free-solid-svg-icons';
-import { faMicrosoft, faJava, faPython } from '@fortawesome/free-brands-svg-icons';
+import { faGraduationCap, faGamepad, faPalette, faBookOpen, faFileDownload } from '@fortawesome/free-solid-svg-icons';
+import { DiPython, DiJava } from 'react-icons/di';
+import { FaCogs, FaReact, FaGitAlt } from 'react-icons/fa';
+import { SiLaravel, SiIntellijidea, SiDocker } from 'react-icons/si'; // Import additional icons
 import profilePicture from '@/assets/profile_picture.jpg';
 
 function About() {
+  // Define the activeCategory state (default is 'backend')
+  const [activeCategory, setActiveCategory] = useState('other');
+
+  const handleCategoryClick = (category) => {
+    setActiveCategory(category);
+  };
+
   return (
     <Layout title="About Me">
-      <div className={styles.aboutContainer}>
-        {/* Profile Section */}
-        <section className={styles.profileSection}>
-          <img src={profilePicture} alt="Bram Van Eccelpoel" className={styles.profileImage} />
-          <div>
-            <h2>Hello, I'm Bram Van Eccelpoel</h2>
+      <div className={`${styles.container} ${styles.themeWrapper}`}>
+
+        {/* Profile Intro */}
+        <div className={`${styles.heroSection} ${styles.themeSection}`}>
+          <img src={profilePicture} alt="Bram Van Eccelpoel" className={styles.heroImage} />
+          <div className={styles.heroText}>
+            <h1>Hi, I'm <span className={styles.highlight}>Bram Van Eccelpoel</span></h1>
             <p>
-              I'm a passionate student currently studying <strong>Application Development</strong>. I chose this course because I wanted to learn more about technology and how to build apps. I love to code, build apps, and experiment with game development in my free time.
+              I'm a passionate student in <strong>Application Development</strong> at Thomas More Geel. With a background in construction, I transitioned into the digital world to pursue my love for coding, creativity, and games.
             </p>
-            <a href="/CV_BramVanEccelpoel.pdf" download="CV_Bram Van Eccelpoel.pdf" className={styles.downloadButton}>Download CV</a> 
+            <p>I am from Herselt a little city next to Westerlo. I have the urge to learn more about programming and data behind big companies.</p>
+            <a href="/CV_BramVanEccelpoel.pdf" download className={styles.cvButton}>
+              <FontAwesomeIcon icon={faFileDownload} /> Download CV
+            </a>
+          </div>
+        </div>
+
+        {/* Timeline */}
+        <section className={`${styles.sectionBox}`}>
+          <h2><FontAwesomeIcon icon={faGraduationCap} /> My Learning Journey</h2>
+          <div className={styles.timeline}>
+            <div className={styles.timelineItem}>
+              <span className={styles.year}>2014 - 2020</span>
+              <p>Bouw-&Houtkunde at DIA Aarschot</p>
+            </div>
+            <div className={styles.timelineItem}>
+              <span className={styles.year}>2020 - 2023</span>
+              <p>Bouw at Thomas More Geel</p>
+            </div>
+            <div className={styles.timelineItem}>
+              <span className={styles.year}>2023 - Now</span>
+              <p>Application Development at Thomas More Geel</p>
+            </div>
           </div>
         </section>
 
         {/* Interests */}
-        <section className={styles.interests}>
-          <h3>What I Love Doing</h3>
-          <ul className={styles.noBullets}>
-            <li><FontAwesomeIcon icon={faGamepad} className={styles.icon} /> Programming games and developing game engines</li>
-            <li><FontAwesomeIcon icon={faPalette} className={styles.icon} /> Creating pixel-art and learning new technologies</li>
-            <li><FontAwesomeIcon icon={faBookOpen} className={styles.icon} /> Reading books, walking, and running</li>
-          </ul>
-        </section>
-
-        {/* Education */}
-        <section className={styles.education}>
-          <h3><FontAwesomeIcon icon={faGraduationCap} className={styles.icon} /> Education & Growth</h3>
-          <p>
-            During my studies, I gained a strong foundation in coding and web development. I enjoy tackling new challenges and understanding how things work under the hood.
-          </p>
+        <section className={`${styles.sectionBox}`}>
+          <h2>🎮 What I Love Doing</h2>
+          <div className={styles.interests}>
+            <div><FontAwesomeIcon icon={faGamepad} /> Programming games & engines</div>
+            <div><FontAwesomeIcon icon={faPalette} /> Creating pixel art & UI/UX</div>
+            <div><FontAwesomeIcon icon={faBookOpen} /> Reading, running, walking</div>
+          </div>
         </section>
 
         {/* Skills */}
-        <section className={styles.skills}>
-          <h3>My Skillset</h3>
-          <div className={styles.skillBar}>
-            <span><FontAwesomeIcon icon={faMicrosoft} className={styles.icon} /> .NET</span>
-            <div className={styles.bar}><div className={`${styles.fill} ${styles.dotnet}`}></div></div>
+        <section className={`${styles.sectionBox}`}>
+          <h2>🛠️ My Skills</h2>
+          
+          {/* Primary Skills: .NET, Python, Java */}
+          <div className={styles.skills}>
+            <div className={styles.skill}>
+              <FaCogs /> .NET
+              <div className={styles.skillBar}><div className={styles.fillDotnet}></div></div>
+            </div>
+            <div className={styles.skill}>
+              <DiPython /> Python
+              <div className={styles.skillBar}><div className={styles.fillPython}></div></div>
+            </div>
+            <div className={styles.skill}>
+              <DiJava /> Java
+              <div className={styles.skillBar}><div className={styles.fillJava}></div></div>
+            </div>
           </div>
-          <div className={styles.skillBar}>
-            <span><FontAwesomeIcon icon={faDatabase} className={styles.icon} /> Data</span>
-            <div className={styles.bar}><div className={`${styles.fill} ${styles.data}`}></div></div>
+
+          {/* Category Buttons */}
+          <div className={styles.skillsButtons}>
+            <button onClick={() => handleCategoryClick('frontend')}>Frontend</button>
+            <button onClick={() => handleCategoryClick('backend')}>Backend</button>
+            <button onClick={() => handleCategoryClick('tools')}>Tools</button>
+            <button onClick={() => handleCategoryClick('other')}>Other Skills</button>
           </div>
-          <div className={styles.skillBar}>
-            <span><FontAwesomeIcon icon={faPython} className={styles.icon} /> Python</span>
-            <div className={styles.bar}><div className={`${styles.fill} ${styles.python}`}></div></div>
-          </div>
-          <div className={styles.skillBar}>
-            <span><FontAwesomeIcon icon={faGlobe} className={styles.icon} /> Fullstack</span>
-            <div className={styles.bar}><div className={`${styles.fill} ${styles.fullstack}`}></div></div>
-          </div>
-          <div className={styles.skillBar}>
-            <span><FontAwesomeIcon icon={faJava} className={styles.icon} /> Java</span>
-            <div className={styles.bar}><div className={`${styles.fill} ${styles.java}`}></div></div>
+
+          {/* Skills List for Each Category */}
+          <div className={styles.skillsList}>
+            {/* Backend Skills */}
+            {activeCategory === 'backend' && (
+              <>
+                <div className={styles.skillItem}>
+                  <FaReact /> React
+                  <p>UI, Frontend</p>
+                </div>
+                <div className={styles.skillItem}>
+                  <SiLaravel /> Laravel
+                  <p>PHP, Web</p>
+                </div>
+                <div className={styles.skillItem}>
+                  <FaGitAlt /> Git
+                  <p>Version Control</p>
+                </div>
+              </>
+            )}
+
+            {/* Frontend Skills */}
+            {activeCategory === 'frontend' && (
+              <>
+                <div className={styles.skillItem}>
+                  <FaReact /> React
+                  <p>UI, Frontend</p>
+                </div>
+              </>
+            )}
+
+            {/* Tools Skills */}
+            {activeCategory === 'tools' && (
+              <>
+                <div className={styles.skillItem}>
+                  <SiIntellijidea /> IntelliJ IDEA
+                  <p>Java, IDE</p>
+                </div>
+                <div className={styles.skillItem}>
+                  <SiDocker /> Docker
+                  <p>DevOps, Containers</p>
+                </div>
+              </>
+            )}
+
+            {/* Other Skills */}
+            {activeCategory === 'other' && (
+              <>
+                <div className={styles.skillItem}>
+                  <FaCogs /> Unity
+                  <p>Game Engine</p>
+                </div>
+                <div className={styles.skillItem}>
+                  <FaCogs /> Godot
+                  <p>Game Engine</p>
+                </div>
+                <div className={styles.skillItem}>
+                  <FaCogs /> Business Skills
+                  <p>Management</p>
+                </div>
+                <div className={styles.skillItem}>
+                  <FaCogs /> Communication
+                  <p>Verbal, Written</p>
+                </div>
+              </>
+            )}
           </div>
         </section>
 
-        {/* Goals */}
-        <section className={styles.goals}>
-          <h3><FontAwesomeIcon icon={faBullseye} className={styles.icon} /> My Goals</h3>
-          <p>
-            My ambition is to become a skilled developer, contributing to impactful and creative projects. I also aim to pursue game development as a serious hobby or side-career.
-          </p>
-        </section>
-
-        {/* Contact */}
-        <section className={styles.contact}>
-          <h3><FontAwesomeIcon icon={faEnvelope} className={styles.icon} /> Let's Connect</h3>
-          <p>
-            Want to collaborate or just chat? Feel free to reach out via social media or email. I'm always open to new opportunities and ideas.
-          </p>
-        </section>
       </div>
     </Layout>
   );

@@ -20,12 +20,14 @@ function Contact() {
               You can email me directly at{' '}
               <a href="mailto:vaneccelpoelbram3@gmail.com">vaneccelpoelbram3@gmail.com</a>
             </p>
+            <a className={styles.contactButton} href="mailto:vaneccelpoelbram3@gmail.com">Send Email</a>
           </div>
           <div className={styles.detailItem}>
             <h3>LinkedIn</h3>
             <p>
               Connect with me on LinkedIn: <a href="https://www.linkedin.com/in/bram-van-eccelpoel/" target="_blank" rel="noopener noreferrer">Bram Vaneccelpoel</a>
             </p>
+            <a className={styles.contactButton} href="https://www.linkedin.com/in/bram-van-eccelpoel/" target="_blank" rel="noopener noreferrer">Visit LinkedIn</a>
           </div>
         </section>
       </div>
