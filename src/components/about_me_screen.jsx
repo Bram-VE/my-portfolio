@@ -14,6 +14,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faMicrosoft, faJava, faPython } from '@fortawesome/free-brands-svg-icons';
 import profilePicture from '@/assets/profile_picture.jpg';
+import cv from '@/assets/CV_Bram Van Eccelpoel.pdf'; 
 
 function About() {
   return (
@@ -27,9 +28,7 @@ function About() {
             <p>
               I'm a passionate student currently studying <strong>Application Development</strong>. I chose this course because I wanted to learn more about technology and how to build apps. I love to code, build apps, and experiment with game development in my free time.
             </p>
-            <a href="public/CV_Bram Van Eccelpoel.pdf" download="CV_Bram Van Eccelpoel.pdf" className={styles.downloadButton}>
-              Download CV
-            </a>
+            <a href={cv} download="CV_Bram Van Eccelpoel.pdf" className={styles.downloadButton}>Download CV</a>
           </div>
         </section>
 
