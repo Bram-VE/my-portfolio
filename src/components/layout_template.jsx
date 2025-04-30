@@ -59,7 +59,7 @@ function Layout({ children, title }) {
             <footer className={`${styles.footer} p-3 mt-5`}>
                 <div className={styles.footerContent}>
                     <div className={styles.footerIcons}>
-                        <a href="https://github.com/DerpieBram" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>
+                        <a href="https://github.com/Bram-VE-02" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>
                             <FontAwesomeIcon icon={faGithub} className={styles.footerIcon} />
                         </a>
                         <Link to="/contact" className={styles.footerLink}>
