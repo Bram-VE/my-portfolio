@@ -99,7 +99,7 @@ function About() {
               <>
                 <div className={styles.skillItem}>
                   <FaReact /> React
-                  <p>UI, Frontend</p>
+                  <p>Data, Backend</p>
                 </div>
                 <div className={styles.skillItem}>
                   <SiLaravel /> Laravel
