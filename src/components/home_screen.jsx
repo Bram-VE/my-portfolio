@@ -46,8 +46,7 @@ function Home() {
             <h2>Looking for a developer?</h2>
             <p>Check out my work and get in touch!</p>
             <div className={styles.skillsButtons}>
-              <Link to="/projects" className={styles.ctaButton}>Learn More About My Projects</Link> 
-              <span> </span>
+              <Link to="/projects" className={styles.ctaButton}>Learn More About My Projects</Link>
               <Link to="/about" className={styles.ctaButton}>Learn More About Me</Link>
             </div>
           </div>
