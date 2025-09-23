@@ -2,9 +2,12 @@ import Layout from './layout_template';
 import styles from './home.module.css';
 import codingPicture from '@/assets/coding.jpg';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 import kempenrust from '@/assets/kempenrust.png';
 import pixelated from '@/assets/pixelated.png';
+import { DiPython, DiJava } from 'react-icons/di';
+import { FaCogs } from 'react-icons/fa';
 
 function Home() {
   const featuredProjects = [
@@ -12,7 +15,7 @@ function Home() {
       id: 'simplepixelated',
       title: "SimplePixelated",
       image: pixelated,
-      description: 'This is my own profile on Itch.io, a platform for indie game developers.',
+      description: 'My own profile on Itch.io, a platform for indie game developers.',
       link: '/projects#simplepixelated',
     },
     {
@@ -24,60 +27,98 @@ function Home() {
     },
   ];
 
+  const skills = [
+    { name: ".NET", icon: <FaCogs />, level: "100%" },
+    { name: "Python", icon: <DiPython />, level: "80%" },
+    { name: "Java", icon: <DiJava />, level: "60%" },
+  ];
+
   return (
     <Layout title="Home">
-      <div className={styles.homeContainer}>
-        {/* Intro Section with Boxed Layout */}
-        <section className={styles.sectionBox}>
-          <div className={styles.introSection}>
-            <div className={styles.introText}>
-              <h1>Hello, I'm Bram</h1>
-              <p>
-                I'm an Application Development student passionate about programming, game development, and pixel art. Explore my projects and learn about my skills!
-              </p>
+      <div className={styles.container}>
+        {/* Hero Section */}
+        <motion.section
+          className={styles.heroSection}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <motion.img 
+            src={codingPicture} 
+            alt="Coding Illustration" 
+            className={styles.heroImage}
+            whileHover={{ scale: 1.05, rotate: 2 }}
+          />
+          <div className={styles.heroText}>
+            <h1 className={styles.heroTitle}>
+              Hello, I'm <span className={styles.orange}>Bram</span>
+            </h1>
+            <p className={styles.heroParagraph}>
+              Application Development student passionate about programming, game development, and pixel art. Explore my projects below!
+            </p>
+            <div className={styles.heroButtons}>
+              <Link to="/projects" className={styles.cvBtn}>🚀 My Projects</Link>
+              <Link to="/about" className={styles.cvBtn}>🎮 About Me</Link>
             </div>
-            <img src={codingPicture} alt="Illustration" className={styles.homeImage} />
           </div>
-        </section>
+        </motion.section>
 
-        {/* Call to Action Section */}
-        <section className={styles.sectionBox}>
-          <div className={styles.ctaSection}>
-            <h2>Looking for a developer?</h2>
-            <p>Check out my work and get in touch!</p>
-            <div className={styles.skillsButtons}>
-              <Link to="/projects" className={styles.ctaButton}>Learn More About My Projects</Link>
-              <Link to="/about" className={styles.ctaButton}>Learn More About Me</Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Featured Projects Section with Custom Styling */}
-        <section className={styles.sectionBox}>
-          <h2>Featured Projects</h2>
-          <div className={styles.projectsContainer}>
+        {/* Featured Projects */}
+        <motion.section
+          className={styles.section}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h2 className={styles.sectionTitle}>🌟 Featured Projects</h2>
+          <div className={styles.cardGrid}>
             {featuredProjects.map((project, index) => (
-              <div className={styles.projectCard} key={index}>
-                <div className={styles.projectBox}>
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className={styles.projectImage}
-                  />
-                  <div className={styles.textContent}>
-                    <h3 className={styles.projectTitle}>{project.title}</h3>
-                    <p className={styles.projectDescription}>{project.description}</p>
-                  </div>
-                  <div className={styles.buttonContainer}>
-                    <Link to={project.link} className={styles.projectButton}>
-                      View Full Project
-                    </Link>
-                  </div>
-                </div>
-              </div>
+              <motion.div
+                key={index}
+                className={styles.cardLarge}
+                whileHover={{ scale: 1.05, boxShadow: "0 0 25px #ff7b00" }}
+              >
+                <img src={project.image} alt={project.title} className={styles.cardImageLarge} />
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <Link to={project.link} className={styles.cvBtn}>View Project</Link>
+              </motion.div>
             ))}
           </div>
-        </section>
+        </motion.section>
+
+        {/* Skills Section */}
+        <motion.section
+          className={styles.section}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h2 className={styles.sectionTitle}>🛠️ My Skills</h2>
+          <div className={styles.cardGrid}>
+            {skills.map((skill, index) => (
+              <motion.div key={index} className={styles.skillCard} whileHover={{ scale: 1.05 }}>
+                <div className={styles.skillHeader}>
+                  {skill.icon} {skill.name}
+                </div>
+                <div className={styles.skillBar}>
+                  <motion.div
+                    className={styles.skillFill}
+                    style={{ width: skill.level }}
+                    initial={{ width: 0 }}
+                    animate={{ width: skill.level }}
+                    transition={{ duration: 1 }}
+                  />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          <div style={{ textAlign: "center", marginTop: "2rem" }}>
+            <Link to="/about" className={styles.cvBtn}>More About Me</Link>
+          </div>
+        </motion.section>
       </div>
     </Layout>
   );
