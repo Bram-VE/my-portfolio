@@ -17,14 +17,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;  /* Added for wrapping content on small screens */
+    flex-wrap: wrap;
 }
 
 .navLinks {
     display: flex;
     gap: 50px;
     align-items: center;
-    flex-wrap: wrap;  /* Added for wrapping on smaller screens */
+    flex-wrap: wrap;
 }
 
 .navLink {
@@ -93,7 +93,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;  /* Allow wrapping for small screens */
+    flex-wrap: wrap;
 }
 
 .footerLink {
@@ -120,9 +120,11 @@
 }
 
 /* Responsive Styles */
+
+/* Tablet / small screens */
 @media (max-width: 768px) {
     .navbar {
-        max-width: 20%;
+        max-width: 90%;
     }
 
     .navLinks {
@@ -138,5 +140,52 @@
     .footerContent {
         flex-direction: column;
         align-items: center;
+        gap: 10px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    .navbar {
+        max-width: 95%;
+        padding: 10px;
+    }
+
+    .navbarContent {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .navLinks {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .navLink {
+        font-size: 1.2rem;
+        padding: 10px 0;
+    }
+
+    .themeToggle {
+        align-self: center;
+        padding: 8px 12px;
+        font-size: 1rem;
+    }
+
+    .footerContent {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .footerLink {
+        font-size: 1.2rem;
+    }
+
+    .footerIcon {
+        font-size: 1.4rem;
+        margin: 0 6px;
     }
 }

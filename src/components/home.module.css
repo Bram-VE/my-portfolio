@@ -181,7 +181,7 @@
   }
 
   .heroImage {
-    width: 80%;
+    width: 60%;
     margin-top: 2rem;
   }
 
@@ -203,6 +203,63 @@
   .heroButtons {
     flex-direction: column;
     gap: 0.5rem;
+  }
+
+  .heroImage {
+    width: 80%;
+    height: auto;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .heroSection {
+    flex-direction: column;
+    padding: 1rem;
+    border-left: 4px solid #FF8C42;
+  }
+
+  .heroText {
+    max-width: 100%;
+  }
+
+  .heroTitle {
+    font-size: 1.8rem;
+  }
+
+  .heroParagraph {
+    font-size: 1rem;
+  }
+
+  .heroImage {
+    width: 90%;
+    height: auto;
+    margin-top: 1.5rem;
+  }
+
+  .heroButtons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .cardGrid {
+    gap: 1rem;
+    flex-direction: column;
+  }
+
+  .cardLarge {
+    width: 95%;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .skillCard {
+    width: 95%;
+  }
+
+  .cvBtn {
+    width: 100%;
+    padding: 12px 0;
   }
 }
 

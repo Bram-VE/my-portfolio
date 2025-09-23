@@ -199,3 +199,99 @@
   }
 }
 
+/* =========================
+   Small phones responsive
+   ========================= */
+@media (max-width: 480px) {
+  .projectsContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+
+  .projectCard {
+    width: 100%;
+    perspective: 600px; /* smaller for tiny screens */
+  }
+
+  .projectBox {
+    padding: 1rem;
+    height: auto; /* auto so content fits */
+    justify-content: flex-start;
+  }
+
+  .projectImage {
+    height: 150px; /* smaller image */
+    border-radius: 10px;
+  }
+
+  .textContent {
+    margin-top: 0.5rem;
+  }
+
+  .projectTitle {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .projectDescription {
+    font-size: 0.8rem;
+    min-height: auto;
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .projectButton,
+  .moreInfoButton {
+    width: 100%;
+    padding: 8px 0;
+    font-size: 0.8rem;
+  }
+
+  /* Modal adjustments */
+  .modalOverlay {
+    padding: 0.5rem;
+  }
+
+  .modalContent {
+    width: 95%;
+    max-width: 100%;
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+
+  .modalHeader h2 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .modalDescription,
+  .modalContributions {
+    font-size: 0.85rem;
+  }
+
+  .modalSkills h3 {
+    font-size: 0.95rem;
+  }
+
+  .skillList {
+    gap: 0.5rem;
+  }
+
+  .skillBar {
+    height: 5px;
+  }
+
+  .skillProgress {
+    border-radius: 5px;
+  }
+
+  .closeButton {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+}

@@ -145,3 +145,77 @@
     max-width: 90%;
   }
 }
+
+/* =========================
+   Small phones responsive
+   ========================= */
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  /* Hero Section */
+  .heroSection {
+    padding: 1.5rem;
+    border-radius: 15px;
+  }
+
+  .heroSection h1 {
+    font-size: 1.8rem; /* smaller heading */
+  }
+
+  .heroSection p {
+    font-size: 1rem; /* smaller paragraph */
+  }
+
+  /* Contact Details Grid */
+  .contactDetails {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; /* smaller gap */
+  }
+
+  .detailItem {
+    padding: 1.2rem;
+    max-width: 95%;
+    border-radius: 15px;
+  }
+
+  .detailItem h3 {
+    font-size: 1.3rem;
+  }
+
+  .detailItem p {
+    font-size: 0.9rem;
+  }
+
+  .detailItem a {
+    font-size: 0.9rem;
+  }
+
+  .icon {
+    margin-bottom: 0.3rem;
+    font-size: 30px; /* smaller icon */
+  }
+
+  .contactButton,
+  .cvBtn {
+    font-size: 0.9rem;
+    padding: 10px 16px;
+  }
+
+  /* CTA Bottom Section */
+  .ctaSection {
+    padding: 1.5rem;
+    border-radius: 15px;
+  }
+
+  .ctaSection h2 {
+    font-size: 1.5rem;
+  }
+
+  .ctaSection p {
+    font-size: 0.95rem;
+  }
+}
