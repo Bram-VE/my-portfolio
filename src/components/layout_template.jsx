@@ -1,5 +1,4 @@
 import { Link, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -8,14 +7,6 @@ import styles from "./layout_template.module.css";
 
 function Layout({ children, title }) {
     const location = useLocation();
-    const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark');
-
-    useEffect(() => {
-        document.body.setAttribute('data-theme', theme); // use data-theme attribute
-        localStorage.setItem('theme', theme);
-    }, [theme]);
-
-    const toggleTheme = () => setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
 
     return (
         <>
@@ -29,9 +20,6 @@ function Layout({ children, title }) {
                             <Link className={`${styles.navLink} ${location.pathname === '/projects' ? styles.active : ''}`} to="/projects">Projects</Link>
                             <Link className={`${styles.navLink} ${location.pathname === '/contact' ? styles.active : ''}`} to="/contact">Contact</Link>
                         </div>
-                        <button onClick={toggleTheme} className={styles.themeToggle}>
-                            {theme === 'dark' ? '☀️ Light' : '🌙 Dark'}
-                        </button>
                     </div>
                 </nav>
             </header>
