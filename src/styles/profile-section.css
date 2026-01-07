@@ -1,0 +1,26 @@
+.section-title {
+  font-size: var(--text-xxl);
+  font-weight: 800;
+  color: var(--accent);
+  text-align: left;
+  margin-bottom: var(--space-lg);
+}
+
+.profile-section {
+  display: block;
+  width: 100%;
+  margin: 0px;
+}
+
+.profile-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+
+  .section-title {
+    font-size: var(--text-lg);
+  }
+}

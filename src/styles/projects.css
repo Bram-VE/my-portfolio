@@ -1,0 +1,397 @@
+.projects-section {
+    width: 100%;
+}
+
+.projects-showcase {
+    background: var(--bg);
+    border-radius: var(--space-md);
+    padding: var(--space-md);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Category Navigation */
+.project-categories {
+    margin-bottom: var(--space-lg);
+    display: flex;
+    justify-content: center;
+}
+
+.button-group {
+    min-height: 50px;
+}
+
+button {
+  background: var(--bg-light);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+}
+
+button.active {
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+button.unactive:hover {
+  border: 2px solid white;
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+}
+
+.project-dropdown {
+  min-width: 150px;
+  flex-grow: 1;
+  background: var(--bg-light);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--text-main);
+  box-shadow: var(--shadow-md);
+  appearance: none;
+  cursor: pointer;
+}
+
+.project-dropdown {
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--text-main) 50%),
+    linear-gradient(135deg, var(--text-main) 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) 50%,
+    calc(100% - 12px) 50%;
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.project-dropdown:focus {
+  outline: none;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-lg);
+}
+
+.project-tile {
+    display: flex;
+    flex-direction: column; /* stack image + info vertically */
+    background: var(--bg-light);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    animation: fadeIn 0.6s ease both;
+    height: 100%; /* allow it to stretch in grid */
+}
+
+.project-tile:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+                0 0 25px rgba(249, 115, 22, 0.3);
+}
+
+.project-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: var(--bg-dark);
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.project-tile:hover .project-image img {
+    transform: scale(1.1);
+}
+
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-tile:hover .project-overlay {
+    opacity: 1;
+}
+
+.view-details-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: var(--shadow-glow);
+    transform: translateY(10px);
+    transition: transform 0.3s ease;
+}
+
+.project-tile:hover .view-details-btn {
+    transform: translateY(0);
+}
+
+.project-info {
+    flex: 1; /* take remaining height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* pushes skills to bottom */
+    padding: var(--space-md);
+}
+
+.project-info h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 var(--space-sm) 0;
+    color: var(--accent);
+}
+
+.project-description {
+    flex-grow: 1;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: var(--space-md);
+    line-height: 1.5;
+}
+
+.project-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-tag {
+    padding: 0.25rem 0.75rem;
+    background: rgba(249, 115, 22, 0.15);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--text-main);
+}
+
+/* Modal */
+.project-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-lg);
+}
+
+.project-modal {
+    background: var(--bg);
+    border: 2px solid var(--accent);
+    border-radius: var(--radius-lg);
+    max-width: 700px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-glow);
+    position: relative;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    background: var(--bg-light);
+    border: none;
+    border-radius: 50%;
+    color: var(--text-main);
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: var(--shadow-md);
+}
+
+.modal-close-btn:hover {
+    background: var(--accent);
+    transform: rotate(90deg);
+    box-shadow: var(--shadow-glow);
+}
+
+.modal-header {
+    padding: var(--space-lg);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.modal-header h2 {
+    font-size: 2rem;
+    margin: 0 0 var(--space-md) 0;
+    color: var(--accent);
+}
+
+.modal-links {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+}
+
+.modal-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--bg-light);
+    border: 1px solid var(--border-strong);
+    border-radius: 50px;
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.modal-links a:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+.modal-body {
+    padding: var(--space-lg);
+}
+
+.modal-description {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: var(--space-lg);
+}
+
+.modal-section {
+    margin-bottom: var(--space-lg);
+}
+
+.modal-section h4 {
+    font-size: 1.2rem;
+    margin: 0 0 var(--space-md) 0;
+    color: var(--accent);
+}
+
+.contributions-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contributions-list li {
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    position: relative;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.contributions-list li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+.modal-skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+    opacity: 0;
+    transform: translateY(20px);
+    }
+    to {
+    opacity: 1;
+    transform: translateY(0);
+    }
+}
+
+@keyframes foldOpen {
+    0% { transform: rotateX(-90deg) scale(0.8); opacity: 0; }
+    50% { transform: rotateX(20deg) scale(1.05); opacity: 0.7; }
+    100% { transform: rotateX(0deg) scale(1); opacity: 1; }
+}
+
+/* Scrollbar */
+.project-modal::-webkit-scrollbar {
+    width: 8px;
+}
+
+.project-modal::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+.project-modal::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 4px;
+}
+
+.modal-video {
+  width: 100%;
+  margin-bottom: var(--space-lg);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.modal-video video {
+  width: 100%;
+	max-height: 300px;
+  border-radius: var(--radius-md);
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .projects-grid {
+    grid-template-columns: 1fr;
+    }
+
+    .project-modal {
+    margin: var(--space-sm);
+    max-height: calc(100vh - 2rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .project-categories button {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+    }
+
+    .modal-video video {
+        max-height: 200px;
+    }
+}

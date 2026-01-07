@@ -1,0 +1,81 @@
+.education-card {
+  background: var(--bg);
+  border-radius: var(--space-md);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.education-card h3 {
+  margin-bottom: var(--space-md);
+  font-size: 1.3rem;
+}
+
+/* Timeline */
+.education-timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.education-timeline::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--accent),
+    transparent
+  );
+}
+
+/* Items */
+.education-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.edu-dot {
+  z-index: 1;
+  position: absolute;
+  left: -2px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent);
+}
+
+.edu-content {
+  background: var(--bg-light);
+  border-radius: var(--space-sm);
+  padding: 0.8rem 1rem;
+  box-shadow: var(--shadow-xs);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-item:hover .edu-content {
+  transform: translateX(6px);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.15);
+  cursor: default;
+}
+
+.edu-content h4 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.edu-school {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin: 0.2rem 0;
+}
+
+.edu-date {
+  font-size: 0.8rem;
+  color: var(--accent);
+  font-family: monospace;
+}

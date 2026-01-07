@@ -1,0 +1,121 @@
+.contact-section {
+  width: 100%;
+  margin-top: var(--space-sm);
+}
+
+.contact-wrapper {
+	display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.contact-left,
+.contact-right {
+  min-width: 280px;
+  box-sizing: border-box; /* ensure padding doesn't overflow */
+}
+
+/* Left side */
+.contact-left h2 {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: var(--space-md);
+  word-break: break-word; /* prevent text overflow */
+}
+
+.contact-left p {
+  color: var(--text-muted);
+  margin-bottom: var(--space-lg);
+  word-break: break-word; /* prevent text overflow */
+}
+
+.contact-social {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.contact-social a {
+  flex: 1 1 40px; /* allow wrapping nicely */
+  text-align: center;
+}
+
+.resume-button {
+  font-size: 1rem;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: var(--shadow-glow);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  height: 50px;
+  text-align: center;
+}
+
+.resume-button:hover {
+  transform: translateY(-2px);
+}
+
+.social-links a {
+	border: 1px solid var(--accent);
+}
+
+/* Right side - GIF */
+.contact-right {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.contact-gif img {
+  max-width: 100%;
+  width: 250px;
+  border-radius: var(--radius-md);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-left,
+  .contact-right {
+    width: 100%;
+    max-width: 100%; /* make sure it doesn’t overflow */
+    padding: 0 1rem;
+  }
+
+  .contact-social {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .contact-social a {
+    flex: 0 0 auto;
+    margin: 0.25rem;
+  }
+
+  .contact-left h2 {
+    font-size: 1.75rem;
+  }
+
+  .contact-left p {
+    font-size: 1rem;
+  }
+
+  .resume-button {
+    width: 100%; /* full width on mobile */
+  }
+
+  .contact-gif img {
+    width: 200px;
+  }
+}

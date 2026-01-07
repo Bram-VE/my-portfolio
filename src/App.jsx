@@ -1,21 +1,20 @@
-import './App.css'
-
+import Design from "./screens/design_screen";
+import Home from "./screens/home_screen";
+import "./styles/base.css";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './components/home_screen';  
-import About from './components/about_me_screen';
-import Contact from './components/contact_screen';
-import Projects from './components/projects_screen';
-import ScrollToTop from './components/scroll_top'; 
+// import About from './components/about_screen.jsx';
+// import Contact from './components/contact_screen.jsx';
+// import Projects from './components/projects_screen.jsx';
 
 function Main() {
   return (
     <BrowserRouter>
-      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/design" element={<Design />} />
+        {/* <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/projects" element={<Projects />} />
+        <Route path="/projects" element={<Projects />} /> */}
       </Routes>
     </BrowserRouter>
   );

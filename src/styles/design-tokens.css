@@ -1,0 +1,132 @@
+/* =========================================================
+   DESIGN SYSTEM – DEFAULT: DARK MODE
+   ========================================================= */
+
+:root {
+  /* ========== MODE IDENTIFIER ========== */
+  color-scheme: dark;
+
+  /* ========== TYPOGRAPHY ========== */
+  --font-base: "General Sans", system-ui, sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 2rem;
+  --text-xxl: 3rem;
+
+  --line-height: 1.6;
+
+  /* ========== DARK BACKGROUNDS (3 LAYERS) ========== */
+  --bg-dark: #0f0f13;
+  --bg: #18181b;
+  --bg-light: #1f1f24;
+
+  /* ========== TEXT COLORS ========== */
+  --text-main: rgba(255, 255, 255, 0.9);
+  --text-muted: rgba(255, 255, 255, 0.6);
+  --text-highlight: rgba(255, 255, 255, 1);
+
+  /* ========== BORDERS ========== */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+
+  /* ========== ACCENT (ORANGE) ========== */
+  --accent: #f97316;          /* orange-500 */
+  --accent-hover: #ea580c;    /* darker orange */
+
+  /* ========== SPACING ========== */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+
+  /* ========== RADIUS ========== */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  /* ====== Flex Utilities ====== */
+  .flex { display: flex; }
+  .flex-center { display: flex; justify-content: center; align-items: center; }
+  .flex-col { display: flex; flex-direction: column; }
+  .flex-gap-sm { gap: var(--space-sm); }
+  .flex-gap-md { gap: var(--space-md); }
+  .flex-gap-lg { gap: var(--space-lg); }
+
+  /* ====== Text Utilities ====== */
+  .text-center { text-align: center; }
+  .text-muted { color: var(--text-muted); }
+  .text-accent { color: var(--accent); }
+
+  /* ========== SHADOW SYSTEM ========== */
+  /* Subtle elevation */
+  --shadow-xs:
+    0 -1px 0 rgba(255, 255, 255, 0.08),
+    0 4px 10px rgba(0, 0, 0, 0.4);
+
+  /* Default card */
+  --shadow-sm:
+    0 -1px 0 rgba(255, 255, 255, 0.12),
+    0 10px 20px rgba(0, 0, 0, 0.5);
+
+  /* Floating panel */
+  --shadow-md:
+    0 -1px 0 rgba(255, 255, 255, 0.16),
+    0 18px 36px rgba(0, 0, 0, 0.6);
+
+  /* Strong elevation */
+  --shadow-lg:
+    0 -1px 0 rgba(255, 255, 255, 0.2),
+    0 28px 56px rgba(0, 0, 0, 0.7);
+
+  /* Accent glow (orange) */
+  --shadow-glow:
+    0 0 0 1px rgba(249, 115, 22, 0.5),
+    0 12px 40px rgba(249, 115, 22, 0.45);
+
+  /* Inset / inward shadow */
+  --shadow-inset:
+    inset 0 4px 6px rgba(0, 0, 0, 0.5),
+    inset 0 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+/* =========================================================
+   LIGHT MODE – READY FOR TOGGLE
+   ========================================================= */
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  /* Backgrounds */
+  --bg-dark: #f4f4f5;
+  --bg: #ffffff;
+  --bg-light: #fafafa;
+
+  /* Text */
+  --text-main: rgba(0, 0, 0, 0.88);
+  --text-muted: rgba(0, 0, 0, 0.6);
+
+  /* Borders */
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-strong: rgba(0, 0, 0, 0.14);
+
+  /* Shadows (lighter, softer) */
+  --shadow-xs:
+    0 1px 2px rgba(0, 0, 0, 0.08);
+
+  --shadow-sm:
+    0 4px 12px rgba(0, 0, 0, 0.12);
+
+  --shadow-md:
+    0 8px 24px rgba(0, 0, 0, 0.16);
+
+  --shadow-lg:
+    0 16px 40px rgba(0, 0, 0, 0.2);
+
+  --shadow-glow:
+    0 0 0 1px rgba(124, 124, 255, 0.25),
+    0 8px 24px rgba(124, 124, 255, 0.25);
+}
