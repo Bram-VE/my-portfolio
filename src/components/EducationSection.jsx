@@ -23,7 +23,7 @@ export default function EducationSection() {
             <span className="edu-date">2020 – 2023</span>
           </div>
         </div>
-
+{/* 
         <div className="education-item">
           <span className="edu-dot"></span>
           <div className="edu-content">
@@ -31,7 +31,7 @@ export default function EducationSection() {
             <p className="edu-school">Damiaan Instituut Aarschot · Belgium</p>
             <span className="edu-date">2016 – 2020</span>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -20,15 +20,6 @@ export default function SocialLinks() {
       </a>
 
       <a
-        href="https://github.com/Bram-VE-02"
-        target="_blank"
-        title="GitHub Bram"
-        style={{ "--i": 2, "--flash-delay": "3.5s", "--flash-duration": "6s" }}
-      >
-        <FaGithub />
-      </a>
-
-      <a
         href="https://github.com/DevlukeDevlog"
         target="_blank"
         title="GitHub Devluke"
@@ -43,15 +34,6 @@ export default function SocialLinks() {
         style={{ "--i": 4, "--flash-delay": "4.5s", "--flash-duration": "6s" }}
       >
         <FaEnvelope />
-      </a>
-
-      <a
-        href="https://www.reddit.com/user/No-Shoulder6379/"
-        target="_blank"
-        title="Reddit"
-        style={{ "--i": 5, "--flash-delay": "5s", "--flash-duration": "6s" }}
-      >
-        <FaReddit />
       </a>
 
       <a
