@@ -2,7 +2,7 @@ import "../styles/skills.css";
 import { useState } from "react";
 import ItchIcon from "../components/ItchIcon";
 import DotNetIcon from "../assets/svgs/DotNetIcon.jsx";
-import CSharpIcon from "../assets/svgs/CsharpIcon.jsx";
+import CSharpIcon from "../assets/svgs/CSharpIcon.jsx";
 import JavaScriptIcon from "../assets/svgs/JavaScriptIcon.jsx";
 import PythonIcon from "../assets/svgs/PythonIcon.jsx";
 import ReactIcon from "../assets/svgs/ReactIcon.jsx";
