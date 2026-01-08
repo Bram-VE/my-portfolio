@@ -220,6 +220,7 @@
   }
 
   .skills-column {
+    margin-top: 0.5rem;
     row-gap: 0.5rem;
     width: 100%;
   }
