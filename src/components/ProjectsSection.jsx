@@ -1,11 +1,12 @@
 import "../styles/projects.css";
 import { useState } from 'react';
-import { FaGithub, FaExternalLinkAlt, FaGamepad, FaCode, FaPalette, FaTimes } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaGamepad, FaCode, FaGlobe, FaTimes, FaMobileAlt } from 'react-icons/fa';
 
 import itchCover from "../assets/images/projects/itchIo_profile_cover.png";
 import appiesLegobibCover from "../assets/images/projects/appies_legobib_cover.png";
 import arProjectCover from "../assets/images/projects/ar_project_cover.png";
 import blinkOdysseyCover from "../assets/images/projects/blink_odyssey_cover.png";
+import kwartelBoekCover from "../assets/images/projects/kwartel_boek_cover.png";
 
 const projects = [
   {
@@ -70,6 +71,21 @@ const projects = [
     skills: ["Godot", "UI/UX", "Game Mechanics"],
     github: "https://github.com/DevlukeDevlog/Blink-Odyssey",
   },
+  {
+    id: 5,
+    title: "Kwartel Boek",
+    category: "app",
+    cover: kwartelBoekCover,
+		video: "https://www.youtube.com/embed/kNBDVwrQXTY",
+    shortDescription: "An app that keeps data about your birds and eggs.",
+    description: "I created an app for my brother that can store data about the birds he keeps. We store all their information aswel as incubating eggs. This way he doesn't need to do it all on paper anymore.",
+    contributions: [
+      "Designed and implemented the business logic",
+      "Built up the frontend using Flutter and Firebase as backend",
+      "Good communication with my brother for requirements",
+    ],
+    skills: ["Flutter", "Firebase", "Client Eye"],
+  },
 ];
 
 export default function ProjectsSection() {
@@ -79,7 +95,8 @@ export default function ProjectsSection() {
   const categories = [
     { id: 'all', label: 'All Projects', icon: FaCode },
     { id: 'game', label: 'Games', icon: FaGamepad },
-    { id: 'web', label: 'Websites', icon: FaCode },
+    { id: 'web', label: 'Websites', icon: FaGlobe },
+    { id: 'app', label: 'Applications', icon: FaMobileAlt },
   ];
 
   const filteredProjects = selectedCategory === 'all' 
