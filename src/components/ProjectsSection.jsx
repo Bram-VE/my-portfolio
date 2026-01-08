@@ -3,12 +3,9 @@ import { useState } from 'react';
 import { FaGithub, FaExternalLinkAlt, FaGamepad, FaCode, FaPalette, FaTimes } from 'react-icons/fa';
 
 import itchCover from "../assets/images/projects/itchIo_profile_cover.png";
-import itchVideo from "../assets/videos/projects/itchIo_profile_video.mp4";
 import appiesLegobibCover from "../assets/images/projects/appies_legobib_cover.png";
 import arProjectCover from "../assets/images/projects/ar_project_cover.png";
-import arProjectVideo from "../assets/videos/projects/ar_project_video.mp4";
 import blinkOdysseyCover from "../assets/images/projects/blink_odyssey_cover.png";
-import blinkOdysseyVideo from "../assets/videos/projects/blink_odyssey_video.mp4";
 import portfolioCover from "../assets/images/projects/portfolio_cover.png";
 
 const projects = [
@@ -17,7 +14,7 @@ const projects = [
     title: "Devluke - Itch.io Portfolio",
     category: "web",
     cover: itchCover,
-		video: itchVideo,
+		video: "https://www.youtube.com/embed/_XCnQWzBsbQ",
     shortDescription: "My library of all indie games published on Itch.io.",
     description: "Devluke is my personal portfolio site on Itch.io, showcasing all my indie game projects with detailed descriptions, media, and download links.",
     contributions: [
@@ -30,17 +27,17 @@ const projects = [
   },
   {
     id: 2,
-    title: "Appies Legobib",
+    title: "Appie's Legobib",
     category: "web",
     cover: appiesLegobibCover,
+    video: "https://www.youtube.com/embed/d4vYPId-ngY",
     shortDescription: "A place where children can play with Lego's.",
-    description: "We developed 'Appies Legobib' to provide a safe and fun environment for children to play with Lego bricks. This app was made in collaboration with Bricks And More. It was made for the kids who where in the hospital for a long time and needed something fun to do.",
+    description: "We developed 'Appie's Legobib' to provide a safe and fun environment for children to play with Lego bricks. This app was made in collaboration with Bricks And More. It was made for the kids who where in the hospital for a long time and needed something fun to do.",
     contributions: [
       "Builtmost of the backend functionality",
       "Implemented the first prototype of Admin panel",
       "Leading the team of 5 developers including me",
     ],
-    demo: "https://youtu.be/nbAQibDr2PM",
     skills: [".Net", "Nx", "Git", "Teamwork", "Leadership"],
   },
   {
@@ -48,7 +45,7 @@ const projects = [
     title: "AR Castle Defender",
     category: "game",
     cover: arProjectCover,
-		video: arProjectVideo,
+		video: "https://www.youtube.com/embed/cnlwDA4L_zc",
     shortDescription: "An tower defense AR game for mobile devices.",
     description: "We created an Augmented Reality tower defense game where players defend their castle from waves of enemies using strategically placed towers. The game utilizes AR technology to blend virtual elements with the real world, providing an immersive gaming experience.",
     contributions: [
@@ -63,7 +60,7 @@ const projects = [
     title: "Blink Odyssey",
     category: "game",
     cover: blinkOdysseyCover,
-		video: blinkOdysseyVideo,
+		video: "https://www.youtube.com/embed/5Ic1Md5pHc8",
     shortDescription: "A prototype of a Clicker / Idle game.",
     description: "I made an prototype of an idle/clicker game called Blink Odyssey. In this game, players embark on a journey through various missions, collecting gold and equipment to progress further. The game features simple mechanics that focus on incremental growth.",
     contributions: [
@@ -208,16 +205,15 @@ export default function ProjectsSection() {
 
             <div className="modal-body">
 							{selectedProject.video && (
-								<div className="modal-video">
-									<video 
-										src={selectedProject.video} 
-										controls 
-										poster={selectedProject.cover} 
-									>
-										Your browser does not support the video tag.
-									</video>
-								</div>
-							)}
+                <div className="modal-video">
+                  <iframe
+                    src={selectedProject.video}
+                    title={selectedProject.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              )}
 
               <p className="modal-description">{selectedProject.description}</p>
 
