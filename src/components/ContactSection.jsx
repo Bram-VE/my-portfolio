@@ -13,13 +13,17 @@ export default function ContactSection() {
           <div className="contact-social">
             <SocialLinks />
           </div>
-          <a
-            href="/CV_BramVanEccelpoel.pdf"
-            download
-            className="resume-button"
-          >
-            Download My Resume
-          </a>
+
+          <div className="resume-button-wrapper">
+            <a
+              href="/resume"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="resume-button"
+            >
+              View My Resume
+            </a>
+          </div>
         </div>
 
         {/* Right side - GIF only */}

@@ -42,7 +42,14 @@
   text-align: center;
 }
 
+.resume-button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+
 .resume-button {
+  min-width: 200px;
   font-size: 1rem;
   background: var(--accent);
   color: #fff;
@@ -61,7 +68,9 @@
 }
 
 .social-links a {
+  opacity: 1;
 	border: 1px solid var(--accent);
+  animation: none;
 }
 
 /* Right side - GIF */
