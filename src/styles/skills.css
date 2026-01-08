@@ -1,103 +1,177 @@
+/* ========================= */
+/* CARD */
+/* ========================= */
 .skills-card {
+  width: 100%;
   background: var(--bg);
   border-radius: var(--space-md);
   padding: var(--space-md);
   box-shadow: var(--shadow-inset);
-  flex-grow: 1;
+  margin-bottom: var(--space-lg);
 }
 
-.skills-bubble-container {
-  margin-top: var(--space-md);
+/* ========================= */
+/* CATEGORY BUTTONS */
+/* ========================= */
+.skill-categories {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0;
+  min-height: 50px;
+  flex-wrap: wrap;
+}
+
+.skill-categories button {
   background: var(--bg-light);
-  position: relative;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.45rem 0.9rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: opacity 0.2s ease;
+}
+
+.skill-categories button.unactive:hover {
+  border: 2px solid white;
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+}
+
+.skill-categories button.active {
+  box-shadow: none;
+  opacity: 0.7;
+}
+
+.button-group {
+  display: flex;
+}
+
+/* ========================= */
+/* LAYOUT */
+/* ========================= */
+.skills-layout {
+  margin-top: var(--space-md);
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* ========================= */
+/* LEFT LIST (TABLE-LIKE COLUMNS) */
+/* ========================= */
+.skills-list {
+  min-width: 370px;
+  display: flex;
+  gap: 3rem; /* space between columns */
+}
+
+.skills-column {
+  display: grid;
+  grid-auto-rows: minmax(40px, 40px);
+  row-gap: 0.75rem;
+}
+
+.skills-list-item {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+  padding: 0.4rem 0.6rem;
+  border-radius: var(--radius-sm);
+  opacity: 0.6;
+  transition: opacity 0.2s ease, background 0.2s ease;
+  max-height: 40px;
+}
+
+.skills-list-item.hovered,
+.skills-list-item:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+}
+
+.skills-list-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skills-list-dot svg {
+  width: 65%;
+  height: 65%;
+}
+
+/* ========================= */
+/* FLOATING BUBBLES */
+.skills-bubble-container {
+  flex-grow: 1;
+  background: var(--bg-light);
   border-radius: var(--space-md);
-  width: 100%;
-  height: 300px;
+  position: relative;
+  height: 360px;
   overflow: hidden;
   box-shadow: var(--shadow-sm);
 }
 
-button {
-  background: var(--bg-light);
-  border: none;
-  border-radius: var(--radius-sm);
-  padding: 0.5rem 1rem;
-  margin-right: 0.5rem;
-  cursor: pointer;
-  box-shadow: var(--shadow-md);
-}
-
-button.active {
-  cursor: not-allowed;
-  box-shadow: none;
-}
-
-button.unactive:hover {
-  border: 2px solid white;
-  border-radius: var(--radius-sm);
-  padding: 0.5rem 1rem;
-  margin-right: 0.5rem;
-  cursor: pointer;
-  box-shadow: var(--shadow-lg);
-}
-
-.skill-categories {
-  height: 40px;
-  display: flex;
-}
-  
 .skill-bubble {
   position: absolute;
-  width: 50px;
-  height: 50px;
-  background: var(--color);
-  border-radius: 50%;
-  padding: 0.8rem;
+  width: 80px;
+  height: 80px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  cursor: default;
+  justify-content: center;
   animation: floatBubble linear infinite;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.skill-bubble .bubble-dot {
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  background: var(--color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, border 0.25s ease, box-shadow 0.25s ease;
   box-shadow: var(--shadow-sm);
 }
 
-.skill-bubble .skill-name {
-  position: absolute;
-  bottom: -1.5rem;
-  opacity: 0;
-  font-size: 0.8rem;
-  white-space: nowrap;
-  transition: opacity 0.2s ease;
+.skill-bubble .bubble-dot svg {
+  width: 60%;
+  height: 60%;
 }
 
-.skill-bubble.active:hover .skill-name {
-  opacity: 1;
+.skill-bubble.inactive .bubble-dot {
+  opacity: 0.25;
+  filter: grayscale(100%);
+  pointer-events: none;
 }
 
-.skill-bubble.active:hover {
-  z-index: 2;
+.skill-bubble.hovered .bubble-dot {
+  transform: scale(1.2);
   border: 2px solid white;
-  animation-play-state: paused;
+  opacity: 1;
+  filter: none;
+  z-index: 3;
   box-shadow: var(--shadow-lg);
 }
 
-.skill-bubble.active{
-  z-index: 1;
+@keyframes floatBubble {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(16px, -14px); }
+  50% { transform: translate(-14px, -10px); }
+  75% { transform: translate(12px, 14px); }
 }
 
-.skill-bubble.inactive {
-  z-index: 0;
-  opacity: 0.1;
-  filter: grayscale(80%);
-}
-
-
 /* ========================= */
-/* MOBILE DROPDOWN */
-/* ========================= */
-
+/* DROPDOWN FOR MOBILE */
 .skill-dropdown {
-  width: 100%;
+  min-width: 150px;
+  flex-grow: 1;
   background: var(--bg-light);
   border: none;
   border-radius: var(--radius-sm);
@@ -108,9 +182,6 @@ button.unactive:hover {
   box-shadow: var(--shadow-md);
   appearance: none;
   cursor: pointer;
-}
-
-.skill-dropdown {
   background-image:
     linear-gradient(45deg, transparent 50%, var(--text-main) 50%),
     linear-gradient(135deg, var(--text-main) 50%, transparent 50%);
@@ -126,21 +197,38 @@ button.unactive:hover {
   box-shadow: var(--shadow-lg);
 }
 
-.skill-categories {
-  align-items: center;
-}
-
-
-@keyframes floatBubble {
-  0%, 100% { transform: translate(-50%, -50%) translate(0, 0); }
-  25% { transform: translate(-50%, -50%) translate(15px, -15px); }
-  50% { transform: translate(-50%, -50%) translate(-15px, -15px); }
-  75% { transform: translate(-50%, -50%) translate(15px, 15px); }
+/* ========================= */
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .skills-list {
+    min-width: 180px;
+  }
 }
 
 @media (max-width: 768px) {
-  .skill-bubble {
-    width: 40px;
-    height: 40px;
+  .button-group {
+    display: none;
+  }
+
+  .skills-list {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .skills-list-item {
+    min-width: 180px;
+  }
+
+  .skills-column {
+    row-gap: 0.5rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-list {
+    flex-direction: column;
+    min-width: none;
+    width: 100%;
   }
 }

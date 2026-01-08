@@ -51,7 +51,7 @@
     filter: none;
   }
   35% {
-    transform: scale(1.03);
-    filter: drop-shadow(0 0 10px var(--accent));
+    transform: scale(1.02);
+    filter: drop-shadow(0 0 2px var(--accent));
   }
 }

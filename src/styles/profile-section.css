@@ -18,7 +18,16 @@
   flex-wrap: wrap;
 }
 
+.education-experience{
+  margin-top: 0;
+  display: flex;
+  gap: 2rem
+}
+
 @media (max-width: 768px) {
+  .education-experience{
+    display: block;
+  }
 
   .section-title {
     font-size: var(--text-lg);

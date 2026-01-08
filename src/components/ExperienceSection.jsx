@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "../styles/experience.css";
 
 const EXPERIENCES = [
@@ -13,47 +12,30 @@ const EXPERIENCES = [
       "Handled builds, testing, and releases",
     ],
   },
-  {
-    role: "Logistical Support",
-    org: "Woonzorgcentrum Sint-Barbara",
-    period: "2023 - Present (Holidays)",
-    summary: "Operational and care assistance",
-    details: [
-      "Prepared resident rooms for sleeping",
-      "Help giving food to residents",
-      "Worked efficiently in care-focused environments",
-    ],
-  },
-  {
-    role: "Road Construction Calculator",
-    org: "Stadsbader",
-    period: "Aug 2022 - Aug 2023",
-    summary: "Cost estimation & planning",
-    details: [
-      "Calculated materials and project costs",
-      "Worked on large-scale infrastructure budgets",
-      "Handled estimates worth millions of euros",
-    ],
-  },
 ];
 
 export default function ExperienceSection() {
-  const [openIndex, setOpenIndex] = useState(null);
-
   return (
     <div className="experience-card fadeIn">
       <h3>Work Experience</h3>
 
-      <div className={`experience-grid ${openIndex !== null ? "has-open" : ""}`}>
+      <p className="experience-note">
+        As a student, I am continuously building my skills and expect to gain
+        more professional experience in the coming years after graduation.
+      </p>
+
+      <div className="experience-grid">
         {EXPERIENCES.map((exp, index) => (
           <div
             key={exp.role}
-            className={`experience-tile ${openIndex === index ? "open" : "closed"}`}
-            onClick={() => setOpenIndex(openIndex === index ? null : index)}
-            style={{ "--flash-delay": `${index * 0.5}s`, "--flash-duration": "6s" }}
+            className="experience-tile open"
+            style={{
+              "--flash-delay": `${index * 0.5}s`,
+              "--flash-duration": "6s",
+            }}
           >
             <div className="experience-top">
-                <h4>{exp.role}</h4>
+              <h4>{exp.role}</h4>
             </div>
 
             <span className="experience-period">{exp.period}</span>

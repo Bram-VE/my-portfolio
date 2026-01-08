@@ -10,8 +10,10 @@ export default function ProfileSection() {
         <h2 className="section-title fadeIn">About Me & Experience</h2>
         <div className="profile-container">
           <SkillsSection />
-          <EducationSection />
-          <ExperienceSection />
+          <div className="education-experience">
+            <EducationSection />
+            <ExperienceSection />
+          </div>
         </div>
       </section>
     </div>

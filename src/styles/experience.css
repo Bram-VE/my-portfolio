@@ -1,5 +1,5 @@
 .experience-card {
-  flex-grow: 1;
+  width: 100%;
   background: var(--bg);
   border-radius: var(--space-md);
   padding: var(--space-md);
@@ -7,8 +7,16 @@
 }
 
 .experience-card h3 {
-  margin-bottom: var(--space-md);
+  margin-bottom: 0.4rem;
   font-size: 1.3rem;
+}
+
+/* STUDENT NOTE */
+.experience-note {
+  font-size: 0.85rem;
+  opacity: 0.75;
+  margin-bottom: var(--space-md);
+  line-height: 1.4;
 }
 
 /* GRID */
@@ -16,18 +24,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1rem;
-
-  min-height: 160px; 
-  transition: min-height 0.25s ease;
-}
-
-.experience-grid.has-open {
-  min-height: 250px; 
-}
-
-
-.experience-grid {
-  transition: min-height 0.25s ease;
 }
 
 /* TILE */
@@ -35,19 +31,20 @@
   background: var(--bg-light);
   border-radius: var(--space-sm);
   padding: 1rem;
-  cursor: pointer;
   position: relative;
 
   min-height: 160px;
   display: flex;
   flex-direction: column;
 
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.experience-tile.closed:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+.experience-tile:hover {
+  transform: translateX(6px);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.15);
+  cursor: default;
 }
 
 /* HEADER */
@@ -63,6 +60,7 @@
   font-size: 1.05rem;
 }
 
+/* META */
 .experience-period {
   display: block;
   margin-top: 0.15rem;
@@ -89,36 +87,11 @@
   margin-right: 4px;
 }
 
-/* DETAILS */
+/* DETAILS (ALWAYS OPEN) */
 .experience-details {
   margin-top: auto;
   font-size: 0.8rem;
-
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-
-  transition: max-height 0.35s ease, opacity 0.25s ease;
-}
-
-.experience-tile.open .experience-details {
-  max-height: 120px;
   opacity: 1;
-}
-
-.experience-tile.open {
-  box-shadow: var(--shadow-glow);
-}
-
-.experience-tile.closed {
-  box-shadow: var(--shadow-sm);
-  min-height: 100px;
-  max-height: 160px;
-}
-
-.experience-tile {
-  animation: flashPopCard var(--flash-duration, 2s) ease-in-out infinite;
-  animation-delay: var(--flash-delay, 2s);
 }
 
 .experience-details ul {
@@ -131,9 +104,10 @@
   margin-bottom: 0.4rem;
 }
 
+/* DESKTOP ENHANCEMENTS */
 @media (min-width: 1024px) {
   .experience-top h4 {
-    font-size: 1.3rem; 
+    font-size: 1.3rem;
   }
 
   .experience-period {
@@ -141,33 +115,32 @@
   }
 
   .experience-org {
-    font-size: 1rem; 
+    font-size: 1rem;
   }
 
   .experience-summary {
-    font-size: 0.95rem; 
+    font-size: 0.95rem;
   }
 
   .experience-details li {
-    font-size: 0.9rem; 
+    font-size: 0.9rem;
   }
 }
 
-
+/* TABLET */
 @media (max-width: 768px) {
   .experience-tile {
     padding: 0.9rem;
   }
+
+  .experience-card {
+    margin-top: var(--space-lg);
+  }
 }
 
+/* MOBILE */
 @media (max-width: 480px) {
   .experience-grid {
     grid-template-columns: 1fr;
-  }
-
-  .experience-tile.closed {
-    box-shadow: var(--shadow-sm);
-    min-height: none;
-    max-height: none;
   }
 }

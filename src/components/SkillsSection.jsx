@@ -1,9 +1,9 @@
 import "../styles/skills.css";
 import { useState } from "react";
+
 import ItchIcon from "../components/ItchIcon";
 import DotNetIcon from "../assets/svgs/DotNetIcon.jsx";
 import CSharpIcon from "../assets/svgs/CSharpIcon.jsx";
-// import JavaScriptIcon from "../assets/svgs/JavaScriptIcon.jsx";
 import PythonIcon from "../assets/svgs/PythonIcon.jsx";
 import ReactIcon from "../assets/svgs/ReactIcon.jsx";
 import GitIcon from "../assets/svgs/GitIcon.jsx";
@@ -16,114 +16,151 @@ import StructuredIcon from "../assets/svgs/StructuredIcon.jsx";
 import DrivenIcon from "../assets/svgs/DrivenIcon.jsx";
 
 const SKILL_CATEGORIES = {
-    Programming: [
+  Programming: [
     { name: ".NET", icon: <DotNetIcon />, color: "#512BD4" },
     { name: "C#", icon: <CSharpIcon />, color: "#c2c9e4ff" },
-    // { name: "Javascript", icon: <JavaScriptIcon />, color: "#b06c17ff" },
-    { name: "Python", icon: <PythonIcon />, color: "#112f45ff" },
-    ],
+    { name: "Python", icon: <PythonIcon />, color: "#204160ff" },
+  ],
   Tools: [
-    { name: "React", icon: <ReactIcon />, color: "#1892b3ff" },
-    { name: "Git", icon: <GitIcon />, color: "#fecdc2ff" },
-    { name: "Flutter", icon: <FlutterIcon />, color: "#1f2d39ff" },
+    { name: "React", icon: <ReactIcon />, color: "#61DAFB" },
+    { name: "Git", icon: <GitIcon />, color: "#6a2216ff" },
+    { name: "Flutter", icon: <FlutterIcon />, color: "#073860ff" },
   ],
   GameDev: [
-    { name: "Unity", icon: <UnityIcon />, color: "#555555" }, 
-    { name: "Godot", icon: <GodotIcon />, color: "#123652ff" },
-    { name: "Pixel Art", icon: <AsepriteIcon />, color: "#3f3332ff" },
+    { name: "Unity", icon: <UnityIcon />, color: "#777" },
+    { name: "Godot", icon: <GodotIcon />, color: "#1a4465ff" },
+    { name: "Pixel Art", icon: <AsepriteIcon />, color: "#3f3332" },
     { name: "Itch.io", icon: <ItchIcon />, color: "#FF5A5F" },
   ],
   SoftSkills: [
-    { name: "Social / Open", icon: <SocialIcon />, color: "#5b72d9ff" },      
-    { name: "Structured", icon: <StructuredIcon />, color: "#865c0eff" },       
-    { name: "Driven", icon: <DrivenIcon />, color: "#278032ff" },            
+    { name: "Social / Open", icon: <SocialIcon />, color: "#5b72d9" },
+    { name: "Structured", icon: <StructuredIcon />, color: "#865c0e" },
+    { name: "Driven", icon: <DrivenIcon />, color: "#278032" },
   ],
 };
 
-
-export default function ProfileSection() {
+export default function SkillsSection() {
   const [activeCategory, setActiveCategory] = useState("All");
-  const allSkills = Object.values(SKILL_CATEGORIES).flat();
-  
-  // Generate stable random positions for each skill (only once)
-  const [skillPositions] = useState(() => {
-    return allSkills.map(() => ({
-      x: Math.floor(Math.random() * 80) + 10,
-      y: Math.floor(Math.random() * 60) + 10,
-      duration: Math.random() * 8 + 12, // 12s to 20s (slower)
-      delay: Math.random() * 5
-    }));
-  });
+  const [hoveredSkill, setHoveredSkill] = useState(null);
+
+  const allSkills = Object.entries(SKILL_CATEGORIES).flatMap(
+    ([category, skills]) =>
+      skills.map((skill) => ({ ...skill, category }))
+  );
+
+  const listSkills =
+    activeCategory === "All"
+      ? allSkills
+      : allSkills.filter((s) => s.category === activeCategory);
+
+  // Columns for desktop
+  const maxRows = 7;
+  const numCols = Math.ceil(listSkills.length / maxRows);
+  const columns = Array.from({ length: numCols }, (_, i) =>
+    listSkills.slice(i * maxRows, i * maxRows + maxRows)
+  );
 
   return (
-    <div className="skills-card fadeIn">
-        <h3>Skills</h3>
+    <section className="skills-card fadeIn">
+      <h3>Skills</h3>
 
-        {/* CATEGORY CONTROLS */}
-        <div className="skill-categories fadeIn">
-
-            {/* DESKTOP / TABLET BUTTONS */}
-            <div className="large-only">
-                <button
-                className={activeCategory === "All" ? "active" : "unactive"}
-                onClick={() => setActiveCategory("All")}
-                >
-                All
-                </button>
-
-                {Object.keys(SKILL_CATEGORIES).map((cat) => (
-                <button
-                    key={cat}
-                    className={activeCategory === cat ? "active" : "unactive"}
-                    onClick={() => setActiveCategory(cat)}
-                >
-                    {cat}
-                </button>
-                ))}
-            </div>
-
-            {/* MOBILE DROPDOWN */}
-            <div className="small-only mobile-small-only">
-                <select
-                className="skill-dropdown"
-                value={activeCategory}
-                onChange={(e) => setActiveCategory(e.target.value)}
-                >
-                <option value="All">All</option>
-                {Object.keys(SKILL_CATEGORIES).map((cat) => (
-                    <option key={cat} value={cat}>
-                    {cat}
-                    </option>
-                ))}
-                </select>
-            </div>
-        </div>
-
-        {/* FLOATING SKILLS */}
-        <div className="skills-bubble-container">
-        {allSkills.map((skill, index) => {
-            const isActive =
-            activeCategory === "All" ||
-            SKILL_CATEGORIES[activeCategory].includes(skill);
-            const position = skillPositions[index];
-            return (
-            <div
-                key={skill.name}
-                className={`skill-bubble ${isActive ? "active" : "inactive"}`}
-                style={{
-                "--color": skill.color,
-                left: `${position.x}%`,
-                top: `${position.y}%`,
-                animationDuration: `${position.duration}s`,
-                animationDelay: `${position.delay}s`,
-                }}
+      {/* CATEGORY BUTTONS / DROPDOWN */}
+      <div className="skill-categories">
+        {/* Desktop Buttons */}
+        <div className="button-group large-only">
+          <div>
+            <button
+              className={activeCategory === "All" ? "active" : "unactive"}
+              onClick={() => setActiveCategory("All")}
             >
-                {skill.icon || skill.name[0]}
-                <span className="skill-name">{skill.name}</span>
+              All
+            </button>
+          </div>
+
+          {Object.keys(SKILL_CATEGORIES).map((cat) => (
+            <div key={cat}>
+            <button
+                className={activeCategory === cat ? "active" : "unactive"}
+                onClick={() => setActiveCategory(cat)}
+              >
+                {cat}
+            </button>
             </div>
-            );
-        })}
+          ))}
         </div>
-    </div>
+
+        {/* Mobile Dropdown */}
+        <div className="small-only mobile-small-only">
+          <select
+            className="skill-dropdown"
+            value={activeCategory}
+            onChange={(e) => setActiveCategory(e.target.value)}
+          >
+            <option value="All">All</option>
+            {Object.keys(SKILL_CATEGORIES).map((cat) => (
+              <option key={cat} value={cat}>
+                {cat}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+
+      <div className="skills-layout">
+        {/* LEFT LIST (TABLE-LIKE COLUMNS) */}
+        <div className="skills-list">
+          {columns.map((col, colIndex) => (
+            <div key={colIndex} className="skills-column">
+              {col.map((skill) => (
+                <div
+                  key={skill.name}
+                  className={`skills-list-item ${
+                    hoveredSkill === skill.name ? "hovered" : ""
+                  }`}
+                  onMouseEnter={() => setHoveredSkill(skill.name)}
+                  onMouseLeave={() => setHoveredSkill(null)}
+                >
+                  <span
+                    className="skills-list-dot"
+                    style={{ background: skill.color }}
+                  >
+                    {skill.icon}
+                  </span>
+                  <span>{skill.name}</span>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+
+        {/* FLOATING BUBBLES */}
+        <div className="skills-bubble-container large-only">
+          {allSkills.map((skill, index) => {
+            const inactive =
+              activeCategory !== "All" &&
+              skill.category !== activeCategory;
+
+            return (
+              <div
+                key={skill.name}
+                className={`skill-bubble ${
+                  hoveredSkill === skill.name ? "hovered" : ""
+                } ${inactive ? "inactive" : "active"}`}
+                style={{
+                  "--color": skill.color,
+                  left: `${15 + (index * 19) % 70}%`,
+                  top: `${20 + (index * 23) % 60}%`,
+                  animationDuration: `${16 + index * 2}s`,
+                }}
+                onMouseEnter={() => !inactive && setHoveredSkill(skill.name)}
+                onMouseLeave={() => !inactive && setHoveredSkill(null)}
+              >
+                <div className="bubble-dot">{skill.icon}</div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
   );
 }
