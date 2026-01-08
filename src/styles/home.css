@@ -14,6 +14,7 @@
 }
 
 .home-content {
+  margin-top: var(--space-lg);
   margin-bottom: var(--space-lg);
   display: flex;
   align-items: center;

@@ -3,7 +3,7 @@ import { useState } from "react";
 import ItchIcon from "../components/ItchIcon";
 import DotNetIcon from "../assets/svgs/DotNetIcon.jsx";
 import CSharpIcon from "../assets/svgs/CSharpIcon.jsx";
-import JavaScriptIcon from "../assets/svgs/JavaScriptIcon.jsx";
+// import JavaScriptIcon from "../assets/svgs/JavaScriptIcon.jsx";
 import PythonIcon from "../assets/svgs/PythonIcon.jsx";
 import ReactIcon from "../assets/svgs/ReactIcon.jsx";
 import GitIcon from "../assets/svgs/GitIcon.jsx";
@@ -19,7 +19,7 @@ const SKILL_CATEGORIES = {
     Programming: [
     { name: ".NET", icon: <DotNetIcon />, color: "#512BD4" },
     { name: "C#", icon: <CSharpIcon />, color: "#c2c9e4ff" },
-    { name: "Javascript", icon: <JavaScriptIcon />, color: "#b06c17ff" },
+    // { name: "Javascript", icon: <JavaScriptIcon />, color: "#b06c17ff" },
     { name: "Python", icon: <PythonIcon />, color: "#112f45ff" },
     ],
   Tools: [
