@@ -6,7 +6,6 @@ import itchCover from "../assets/images/projects/itchIo_profile_cover.png";
 import appiesLegobibCover from "../assets/images/projects/appies_legobib_cover.png";
 import arProjectCover from "../assets/images/projects/ar_project_cover.png";
 import blinkOdysseyCover from "../assets/images/projects/blink_odyssey_cover.png";
-import portfolioCover from "../assets/images/projects/portfolio_cover.png";
 
 const projects = [
   {
@@ -71,20 +70,6 @@ const projects = [
     skills: ["Godot", "UI/UX", "Game Mechanics"],
     github: "https://github.com/DevlukeDevlog/Blink-Odyssey",
   },
-  {
-    id: 5,
-    title: "Portfolio Website",
-    category: "web",
-    cover: portfolioCover,
-    shortDescription: "My personal portfolio website to showcase my projects and skills.",
-    description: "This portfolio website is designed to highlight my skills, projects, and experiences as a developer. It features a clean and modern design, easy navigation, and responsive layout to ensure a great user experience across all devices.",
-    contributions: [
-      "Initiated and developed the entire website",
-      "Created responsive design and user-friendly navigation",
-      "Made all the pixel art assets used in the website",
-    ],
-    skills: ["React", "UI/UX", "CSS", "Pixel Art"],
-  }
 ];
 
 export default function ProjectsSection() {
