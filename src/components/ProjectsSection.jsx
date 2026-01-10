@@ -137,18 +137,19 @@ export default function ProjectsSection() {
       <div className="projects-showcase">
         <nav className="project-categories">
           <div className="large-only">
-            <div className="flex button-group">
+            <div className="button-group">
               {categories.map(cat => {
                 const Icon = cat.icon;
                 return (
-                  <button
-                    key={cat.id}
-                    onClick={() => setSelectedCategory(cat.id)}
-                    className={selectedCategory === cat.id ? "active" : "unactive"}
-                  >
-                    <Icon style={{ marginRight: "0.5rem" }} />
-                    {cat.label}
-                  </button>
+                  <div key={cat.id}>
+                    <button
+                      onClick={() => setSelectedCategory(cat.id)}
+                      className={selectedCategory === cat.id ? "active" : "unactive"}
+                    >
+                      <Icon style={{ marginRight: "0.5rem" }} />
+                      {cat.label}
+                    </button>
+                  </div>
                 );
               })}
             </div>
