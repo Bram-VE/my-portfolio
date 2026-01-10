@@ -41,25 +41,6 @@
   text-align: center;
 }
 
-.resume-button {
-  min-width: 200px;
-  font-size: 1rem;
-  background: var(--accent);
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border-radius: 50px;
-  font-weight: 600;
-  box-shadow: var(--shadow-glow);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-  height: 50px;
-  text-align: center;
-}
-
-.resume-button:hover {
-  transform: translateY(-2px);
-}
-
 .social-links a {
   opacity: 1;
 	border: 1px solid var(--accent);
@@ -113,10 +94,6 @@
 
   .contact-left p {
     font-size: 1rem;
-  }
-
-  .resume-button {
-    width: 100%; 
   }
 
   .contact-gif img {

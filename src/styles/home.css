@@ -116,6 +116,27 @@
   justify-content: center;
 }
 
+.resume-button {
+  min-width: 200px;
+  font-size: 1rem;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: var(--shadow-glow);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.resume-button:hover {
+  transform: translateY(-2px);
+  text-decoration: underline;
+}
+
 .about-pixelart {
   min-width: 360px;
   width: 360px;
@@ -176,6 +197,10 @@
   .about-card-content {
     flex-direction: column;
     text-align: center;
+  }
+
+  .resume-button {
+    width: 100%; 
   }
 
   .about-card-photo {
