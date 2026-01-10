@@ -14,6 +14,7 @@ import ProfileSection from "../components/ProfileSection";
 import ProjectsSection from "../components/ProjectsSection";
 import ContactSection from "../components/ContactSection";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -21,7 +22,6 @@ export default function Home() {
       <Navbar />
       <WaveBackground />
 
-      {/* HERO */}
       <section className="home-content foldOpen">
         <div className="home-text-wrapper fadeIn">
           <div className="flex">
@@ -53,7 +53,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ABOUT */}
       <div className="about-wrapper">
         <img
           src={shipPicture}
@@ -92,7 +91,19 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <SocialLinks />
+              <div className="Social-wrapper">
+                <SocialLinks />
+                <div className="resume-button-wrapper">
+                  <a
+                    href="/resume"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="resume-button"
+                  >
+                    View My Resume
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -101,6 +112,7 @@ export default function Home() {
       <ProfileSection />
       <ProjectsSection />
       <ContactSection />
+      <Footer />
     </main>
   );
 }

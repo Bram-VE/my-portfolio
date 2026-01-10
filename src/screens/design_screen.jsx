@@ -1,7 +1,6 @@
 export default function Design() {
   return (
     <main>
-      {/* Title */}
       <section>
         <h1>Design System Preview</h1>
         <p>
@@ -10,7 +9,6 @@ export default function Design() {
         </p>
       </section>
 
-      {/* Background layers */}
       <section>
         <h2>Background layers</h2>
 
@@ -56,7 +54,6 @@ export default function Design() {
         </div>
       </section>
 
-      {/* Typography */}
       <section>
         <h2>Typography</h2>
 
@@ -70,7 +67,6 @@ export default function Design() {
         </p>
       </section>
 
-      {/* Buttons */}
       <section>
         <h2>Buttons & Accent</h2>
 
@@ -116,7 +112,6 @@ export default function Design() {
         </div>
       </section>
 
-      {/* Shadows */}
       <section>
         <h2>Shadow system</h2>
 
@@ -136,7 +131,6 @@ export default function Design() {
         </div>
       </section>
 
-      {/* Elevation demo */}
       <section>
         <h2>Hover elevation</h2>
 
@@ -165,7 +159,6 @@ export default function Design() {
   );
 }
 
-/* Helper */
 function cardStyle(shadow) {
   return {
     background: "var(--bg-light)",

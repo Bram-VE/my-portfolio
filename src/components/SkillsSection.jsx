@@ -64,9 +64,7 @@ export default function SkillsSection() {
     <section className="skills-card fadeIn">
       <h3>Skills</h3>
 
-      {/* CATEGORY BUTTONS / DROPDOWN */}
       <div className="skill-categories">
-        {/* Desktop Buttons */}
         <div className="button-group large-only">
           <div>
             <button
@@ -89,7 +87,6 @@ export default function SkillsSection() {
           ))}
         </div>
 
-        {/* Mobile Dropdown */}
         <div className="small-only mobile-small-only">
           <select
             className="skill-dropdown"
@@ -107,7 +104,6 @@ export default function SkillsSection() {
       </div>
 
       <div className="skills-layout">
-        {/* LEFT LIST (TABLE-LIKE COLUMNS) */}
         <div className="skills-list">
           {columns.map((col, colIndex) => (
             <div key={colIndex} className="skills-column">
@@ -133,7 +129,6 @@ export default function SkillsSection() {
           ))}
         </div>
 
-        {/* FLOATING BUBBLES */}
         <div className="skills-bubble-container large-only">
           {allSkills.map((skill, index) => {
             const inactive =

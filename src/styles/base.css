@@ -2,7 +2,7 @@
 
 html {
   box-sizing: border-box;
-  font-size: 16px; /* Base font size, scalable with rems */
+  font-size: 16px;
 }
 
 *, *::before, *::after {
@@ -11,7 +11,7 @@ html {
 
 body {
   margin: 0;
-  padding: var(--space-md); /* Responsive default padding */
+  padding: var(--space-md); 
   font-family: var(--font-base);
   background-color: var(--bg-dark);
   color: var(--text-main);

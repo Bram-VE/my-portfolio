@@ -10,7 +10,6 @@
     box-shadow: var(--shadow-sm);
 }
 
-/* Category Navigation */
 .project-categories {
     margin-bottom: var(--space-lg);
     display: flex;
@@ -76,7 +75,6 @@ button.unactive:hover {
   box-shadow: var(--shadow-lg);
 }
 
-/* Projects Grid */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -85,7 +83,7 @@ button.unactive:hover {
 
 .project-tile {
     display: flex;
-    flex-direction: column; /* stack image + info vertically */
+    flex-direction: column; 
     background: var(--bg-light);
     border-radius: var(--radius-lg);
     overflow: hidden;
@@ -93,7 +91,7 @@ button.unactive:hover {
     box-shadow: var(--shadow-sm);
     transition: transform 0.35s ease, box-shadow 0.35s ease;
     animation: fadeIn 0.6s ease both;
-    height: 100%; /* allow it to stretch in grid */
+    height: 100%; 
 }
 
 .project-tile:hover {
@@ -154,10 +152,10 @@ button.unactive:hover {
 }
 
 .project-info {
-    flex: 1; /* take remaining height */
+    flex: 1; 
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* pushes skills to bottom */
+    justify-content: space-between; 
     padding: var(--space-md);
 }
 
@@ -191,7 +189,6 @@ button.unactive:hover {
     color: var(--text-main);
 }
 
-/* Modal */
 .project-modal-backdrop {
     position: fixed;
     inset: 0;
@@ -328,7 +325,6 @@ button.unactive:hover {
     gap: 0.5rem;
 }
 
-/* Animations */
 @keyframes fadeIn {
     from {
     opacity: 0;
@@ -346,7 +342,6 @@ button.unactive:hover {
     100% { transform: rotateX(0deg) scale(1); opacity: 1; }
 }
 
-/* Scrollbar */
 .project-modal::-webkit-scrollbar {
     width: 8px;
 }
@@ -375,7 +370,6 @@ button.unactive:hover {
 }
 
 
-/* Responsive */
 @media (max-width: 768px) {
     .projects-grid {
     grid-template-columns: 1fr;

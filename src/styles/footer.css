@@ -1,0 +1,44 @@
+.footer {
+  width: 100%;
+  padding: 1.5rem 1rem;
+}
+
+.footer-card {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--bg);
+  border-radius: var(--space-md);
+  padding: 1rem 1.5rem;
+  box-shadow: var(--shadow-inset);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-left,
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.footer-icon {
+  font-size: 0.9rem;
+}
+
+.react-icon {
+  font-size: 1rem;
+  color: #61dafb;
+}
+
+@media (max-width: 600px) {
+  .footer-card {
+    justify-content: center;
+    text-align: center;
+  }
+}

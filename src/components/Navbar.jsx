@@ -21,7 +21,6 @@ export default function Navbar() {
         </button>
       </div>
       
-      {/* Hamburger for mobile */}
       <button 
         className="navbar-hamburger"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -30,14 +29,12 @@ export default function Navbar() {
         <GiHamburgerMenu size={24} />
       </button>
 
-      {/* Desktop navigation */}
       <div className="navbar-right">
         <button onClick={() => handleScroll("about")}>About</button>
         <button onClick={() => handleScroll("projects")}>Projects</button>
         <button onClick={() => handleScroll("contact")}>Contact</button>
       </div>
 
-      {/* Mobile dropdown */}
       {isMenuOpen && (
         <div className="navbar-dropdown">
           <button onClick={() => handleScroll("about")}>About</button>

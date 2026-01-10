@@ -12,21 +12,20 @@
 .contact-left,
 .contact-right {
   min-width: 280px;
-  box-sizing: border-box; /* ensure padding doesn't overflow */
+  box-sizing: border-box; 
 }
 
-/* Left side */
 .contact-left h2 {
   font-size: 2rem;
   color: var(--accent);
   margin-bottom: var(--space-md);
-  word-break: break-word; /* prevent text overflow */
+  word-break: break-word; 
 }
 
 .contact-left p {
   color: var(--text-muted);
   margin-bottom: var(--space-lg);
-  word-break: break-word; /* prevent text overflow */
+  word-break: break-word; 
 }
 
 .contact-social {
@@ -38,15 +37,9 @@
 }
 
 .contact-social a {
-  flex: 1 1 40px; /* allow wrapping nicely */
+  flex: 1 1 40px;
   text-align: center;
 }
-
-.resume-button-wrapper {
-  display: flex;
-  justify-content: center;
-}
-
 
 .resume-button {
   min-width: 200px;
@@ -73,7 +66,6 @@
   animation: none;
 }
 
-/* Right side - GIF */
 .contact-right {
   display: flex;
   justify-content: center;
@@ -86,17 +78,20 @@
   border-radius: var(--radius-md);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .contact-wrapper {
     flex-direction: column;
     align-items: center;
   }
 
+  .contact-section {
+    margin-bottom: 0px;
+  }
+
   .contact-left,
   .contact-right {
     width: 100%;
-    max-width: 100%; /* make sure it doesn’t overflow */
+    max-width: 100%; 
     padding: 0 1rem;
   }
 
@@ -121,7 +116,7 @@
   }
 
   .resume-button {
-    width: 100%; /* full width on mobile */
+    width: 100%; 
   }
 
   .contact-gif img {

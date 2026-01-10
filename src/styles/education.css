@@ -11,7 +11,6 @@
   font-size: 1.3rem;
 }
 
-/* Timeline */
 .education-timeline {
   position: relative;
   padding-left: 2rem;
@@ -31,7 +30,6 @@
   );
 }
 
-/* Items */
 .education-item {
   position: relative;
   margin-bottom: 2rem;
@@ -55,12 +53,6 @@
   padding: 0.8rem 1rem;
   box-shadow: var(--shadow-xs);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.education-item:hover .edu-content {
-  transform: translateX(6px);
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.15);
-  cursor: default;
 }
 
 .edu-content h4 {

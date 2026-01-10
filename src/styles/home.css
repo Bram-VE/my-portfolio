@@ -1,8 +1,5 @@
 @import "./design-tokens.css";
 
-/* =========================================================
-   PAGE LAYOUT
-   ========================================================= */
 .home-container {
   margin : 0 auto;
   display: flex;
@@ -22,9 +19,6 @@
   flex-wrap: wrap;
 }
 
-/* =========================================================
-   HERO TEXT
-   ========================================================= */
 .home-text-wrapper {
   max-width: 500px;
 }
@@ -56,9 +50,6 @@
   color: var(--accent);
 }
 
-/* =========================================================
-   ABOUT SECTION
-   ========================================================= */
 .about-wrapper {
   display: flex;
   align-items: center;
@@ -114,9 +105,17 @@
   line-height: var(--line-height);
 }
 
-/* =========================================================
-   PIXEL ART
-   ========================================================= */
+.Social-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.resume-button-wrapper {
+  margin-left: var(--space-lg);
+  display: flex;
+  justify-content: center;
+}
+
 .about-pixelart {
   min-width: 360px;
   width: 360px;
@@ -128,10 +127,6 @@
   animation: rock 6s ease-in-out infinite;
   transform-origin: bottom center;
 }
-
-/* =========================================================
-   ANIMATION UTILITIES
-   ========================================================= */
 
 .fadeIn {
   animation: fadeIn 1s ease-out forwards;
@@ -150,10 +145,6 @@
   animation: rock 6s ease-in-out infinite;
 }
 
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
 @media (max-width: 1024px) {
   .home-text-wrapper {
     max-width: 400px;
@@ -195,6 +186,18 @@
 }
 
 @media (max-width: 480px) {
+  .Social-wrapper {
+    display: block;
+  }
+
+  
+  .resume-button-wrapper {
+    margin-left: 0px;
+    margin-top: var(--space-lg);
+    display: flex;
+    justify-content: center;
+  }
+
   .home-content {
     margin-bottom: var(--space-lg);
   }

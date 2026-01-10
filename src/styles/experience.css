@@ -11,7 +11,6 @@
   font-size: 1.3rem;
 }
 
-/* STUDENT NOTE */
 .experience-note {
   font-size: 0.85rem;
   opacity: 0.75;
@@ -19,14 +18,12 @@
   line-height: 1.4;
 }
 
-/* GRID */
 .experience-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1rem;
 }
 
-/* TILE */
 .experience-tile {
   background: var(--bg-light);
   border-radius: var(--space-sm);
@@ -41,13 +38,6 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.experience-tile:hover {
-  transform: translateX(6px);
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.15);
-  cursor: default;
-}
-
-/* HEADER */
 .experience-top {
   display: flex;
   justify-content: space-between;
@@ -60,7 +50,6 @@
   font-size: 1.05rem;
 }
 
-/* META */
 .experience-period {
   display: block;
   margin-top: 0.15rem;
@@ -75,7 +64,6 @@
   margin: 0.2rem 0 0.5rem;
 }
 
-/* TERMINAL LINE */
 .experience-summary {
   font-family: monospace;
   font-size: 0.8rem;
@@ -87,7 +75,6 @@
   margin-right: 4px;
 }
 
-/* DETAILS (ALWAYS OPEN) */
 .experience-details {
   margin-top: auto;
   font-size: 0.8rem;
@@ -104,7 +91,6 @@
   margin-bottom: 0.4rem;
 }
 
-/* DESKTOP ENHANCEMENTS */
 @media (min-width: 1024px) {
   .experience-top h4 {
     font-size: 1.3rem;
@@ -127,7 +113,6 @@
   }
 }
 
-/* TABLET */
 @media (max-width: 768px) {
   .experience-tile {
     padding: 0.9rem;
@@ -138,7 +123,6 @@
   }
 }
 
-/* MOBILE */
 @media (max-width: 480px) {
   .experience-grid {
     grid-template-columns: 1fr;
