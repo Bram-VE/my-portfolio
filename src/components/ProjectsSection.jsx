@@ -71,10 +71,10 @@ const projects = [
     title: "Blink Odyssey",
     category: "game",
     cover: blinkOdysseyCover,
-    video: "https://www.youtube.com/embed/5Ic1Md5pHc8",
+    demo: "/exes/blink_odyssey.exe",
     shortDescription: "A prototype of a Clicker / Idle game.",
     description:
-      "A prototype idle/clicker game focused on incremental progression through missions, gold, and equipment.",
+      "A prototype idle/clicker game focused on incremental progression through missions, gold, and equipment. You can download the game either trough clicking Demo or find it in the releases on my Github.",
     contributions: [
       "Developed the entire prototype",
       "Implemented gameplay mechanics and UI",
