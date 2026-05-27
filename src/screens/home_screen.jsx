@@ -36,7 +36,7 @@ export default function Home() {
           </div>
 
           <p className="home-subtitle">
-            Student Application Development and Freelance Game Developer
+            Application/Game Developer
           </p>
 
           <div className="home-location floatUpDown">
@@ -85,7 +85,7 @@ export default function Home() {
                     <h2>Also known as Devluke</h2>
                   </div>
                   <p>
-                    Passionate student and indie game developer. I love creating games,
+                    Passionate indie game developer. I love creating games,
                     programming applications, and designing pixel-art. Always exploring
                     new ideas!
                   </p>
