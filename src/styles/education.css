@@ -18,16 +18,7 @@
 .education-header h3 {
   margin: 0;
   color: var(--text-highlight);
-  font-size: 1.35rem;
-}
-
-.section-kicker {
-  margin: 0;
-  color: var(--accent);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 1.4rem;
 }
 
 .education-timeline {
@@ -89,17 +80,6 @@
   font-size: 0.78rem;
 }
 
-.edu-status {
-  flex: 0 0 auto;
-  border: 1px solid rgba(249, 115, 22, 0.3);
-  border-radius: 999px;
-  padding: 0.18rem 0.55rem;
-  color: var(--accent);
-  background: rgba(249, 115, 22, 0.08);
-  font-size: 0.72rem;
-  font-weight: 700;
-}
-
 .edu-school {
   margin: 0.45rem 0 0.8rem;
   color: var(--text-muted);
@@ -132,11 +112,7 @@
   }
 
   .education-header h3 {
-    font-size: 1.6rem;
-  }
-
-  .section-kicker {
-    font-size: 0.8rem;
+    font-size: 1.4rem;
   }
 
   .edu-content h4 {
@@ -144,7 +120,6 @@
   }
 
   .edu-date,
-  .edu-status,
   .edu-focus-list span {
     font-size: 0.88rem;
   }

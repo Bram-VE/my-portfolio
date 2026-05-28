@@ -38,13 +38,34 @@ export default function InternshipScreen() {
       <Navbar />
 
       <section className="internship-hero fadeIn">
-        <p className="section-kicker">Internship</p>
-        <h1>dotNET lab - Appie's Legobib</h1>
-        <p>
-          During my internship at dotNET lab, I worked on Appie's Legobib: a
-          reservation and inventory system for a Lego library used by children
-          in long-term hospital care.
-        </p>
+        <div className="internship-hero-content">
+          <div className="internship-hero-copy">
+            <p className="section-kicker">Internship</p>
+            <h1>dotNET lab - Appie's Legobib</h1>
+            <p>
+              During my internship at dotNET lab, I worked on Appie's Legobib: a
+              reservation and inventory system for a Lego library used by children
+              in long-term hospital care.
+            </p>
+          </div>
+
+          <div className="internship-brand-card">
+            <img
+              src="/stage/DotNETlab_Logo.gif"
+              alt="dotNET lab logo"
+              className="internship-brand-logo"
+            />
+            <div>
+              <h2>About dotNET lab</h2>
+              <p>
+                dotNET lab is an IT consultancy bureau that helps KMO's and
+                mid-market organizations with software, AI, and IT teams. They
+                combine consultancy, managed services, training, and Try & Hire
+                to help clients build practical solutions and innovate safely.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section className="internship-grid">

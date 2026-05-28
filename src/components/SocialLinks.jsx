@@ -1,7 +1,6 @@
 import {
   FaLinkedin,
   FaGithub,
-  FaEnvelope,
   FaReddit
 } from "react-icons/fa";
 import ItchIcon from "../components/ItchIcon";
@@ -26,14 +25,6 @@ export default function SocialLinks() {
         style={{ "--i": 3, "--flash-delay": "4s", "--flash-duration": "6s" }}
       >
         <FaGithub />
-      </a>
-
-      <a
-        href="mailto:vaneccelpoelbram3@gmail.com"
-        title="Email"
-        style={{ "--i": 4, "--flash-delay": "4.5s", "--flash-duration": "6s" }}
-      >
-        <FaEnvelope />
       </a>
 
       <a

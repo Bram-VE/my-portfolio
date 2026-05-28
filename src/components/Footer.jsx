@@ -21,7 +21,7 @@ export default function Footer() {
 
         <div className="footer-ai-note">
           <FaMagic aria-hidden="true" />
-          <span>Portfolio refined with AI assistance for text and small style improvements.</span>
+          <span>Website refined with AI assistance for text and small style improvements.</span>
         </div>
       </div>
     </footer>

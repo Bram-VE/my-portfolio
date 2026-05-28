@@ -19,7 +19,7 @@ import kwartelBoekCover from "../assets/images/projects/kwartel_boek_cover.png";
 const projects = [
   {
     id: 1,
-    title: "Devluke - Itch.io Portfolio",
+    title: "Devluke - Itch.io Showcase",
     category: "game",
     cover: itchCover,
     video: "https://www.youtube.com/embed/_XCnQWzBsbQ",
@@ -91,7 +91,6 @@ const projects = [
     title: "Blink Odyssey",
     category: "game",
     cover: blinkOdysseyCover,
-    demo: "/exes/blink_odyssey.exe",
     role: "Solo developer",
     shortDescription: "An idle/clicker prototype about progression, missions, and rewards.",
     description:
@@ -187,7 +186,7 @@ export default function ProjectsSection() {
 
           <div className="small-only mobile-small-only">
             <select
-              className="project-dropdown"
+              className="select-control project-dropdown"
               value={selectedCategory}
               onChange={(event) => setSelectedCategory(event.target.value)}
             >

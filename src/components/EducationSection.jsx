@@ -6,8 +6,7 @@ const EDUCATION = [
     type: "Bachelor",
     school: "Thomas More Geel",
     location: "Belgium",
-    period: "2023 - Present",
-    status: "Current",
+    period: "2023 - 2026",
     focus: ["Full-stack development", "Software architecture", "Team projects"],
   },
   {
@@ -16,7 +15,6 @@ const EDUCATION = [
     school: "Thomas More Geel",
     location: "Belgium",
     period: "2020 - 2023",
-    status: "Completed",
     focus: ["Technical planning", "Problem solving", "Project coordination"],
   },
 ];
@@ -40,7 +38,6 @@ export default function EducationSection() {
                   <p className="edu-date">{item.period}</p>
                   <h4>{item.degree}</h4>
                 </div>
-                <span className="edu-status">{item.status}</span>
               </div>
 
               <p className="edu-school">

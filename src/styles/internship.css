@@ -7,25 +7,23 @@
   padding: 0 var(--space-lg) var(--space-xl);
 }
 
-.section-kicker {
-  margin: 0 0 0.6rem;
-  color: var(--accent);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
 .internship-hero {
   position: relative;
   overflow: hidden;
   margin-top: var(--space-md);
   margin-bottom: var(--space-lg);
-  padding: 2rem;
-  background: var(--bg);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+  padding: 2rem 0;
+}
+
+.internship-hero-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.9fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.internship-hero-copy {
+  min-width: 0;
 }
 
 .internship-hero h1 {
@@ -42,6 +40,35 @@
   color: var(--text-muted);
   font-size: 1.04rem;
   line-height: 1.75;
+}
+
+.internship-brand-card {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.internship-brand-card h2 {
+  margin-bottom: 0.45rem;
+  color: var(--text-highlight);
+  font-size: 1.1rem;
+}
+
+.internship-brand-card p {
+  margin-bottom: 0;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.internship-brand-logo {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .internship-grid {
@@ -187,8 +214,12 @@
     padding: 0;
   }
 
+  .internship-hero-content {
+    grid-template-columns: 1fr;
+  }
+
   .internship-hero {
-    padding: 1.35rem;
+    padding: 1.35rem 0;
   }
 
   .internship-hero h1 {
@@ -198,6 +229,14 @@
 
   .internship-hero p:not(.section-kicker) {
     font-size: 1rem;
+  }
+
+  .internship-brand-card {
+    gap: 0.8rem;
+  }
+
+  .internship-brand-logo {
+    max-width: 180px;
   }
 
   .internship-panel {
@@ -223,7 +262,15 @@
 
 @media (max-width: 480px) {
   .internship-hero {
-    padding: 1.1rem;
+    padding: 1.1rem 0;
+  }
+
+  .internship-brand-card {
+    padding: 0.9rem;
+  }
+
+  .internship-brand-logo {
+    max-width: 150px;
   }
 
   .internship-panel,

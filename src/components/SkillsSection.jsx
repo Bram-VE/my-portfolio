@@ -14,28 +14,48 @@ import AsepriteIcon from "../assets/svgs/AsepriteIcon.jsx";
 import SocialIcon from "../assets/svgs/SocialIcon.jsx";
 import StructuredIcon from "../assets/svgs/StructuredIcon.jsx";
 import DrivenIcon from "../assets/svgs/DrivenIcon.jsx";
-import { SiAngular } from "react-icons/si";
+import {
+  SiAngular,
+  SiCss3,
+  SiDocker,
+  SiFirebase,
+  SiGnubash,
+  SiHtml5,
+  SiMysql,
+  SiPostgresql,
+  SiTailwindcss,
+  SiTypescript,
+  SiOpenjdk,
+} from "react-icons/si";
 
 const CATEGORY_LABELS = {
   Programming: "Programming",
+  Frameworks: "Frameworks",
   Tools: "Tools",
-  GameDev: "Game Development",
+  GameDevelopment: "Game Development",
   SoftSkills: "Soft skills",
 };
 
 const SKILL_CATEGORIES = {
   Programming: [
-    { name: ".NET", icon: <DotNetIcon />, color: "#512BD4", description: "My strongest backend preference for building APIs, app logic, and reliable application services.", siteUrl: "https://dotnet.microsoft.com/" },
+    { name: ".NET", icon: <DotNetIcon />, color: "#512BD4", description: "A proficient backend choice for building APIs, app logic, and reliable application services.", siteUrl: "https://dotnet.microsoft.com/" },
     { name: "C#", icon: <CSharpIcon />, color: "#c2c9e4ff", description: "A language I mainly use through Unity for gameplay scripts and game logic.", siteUrl: "https://learn.microsoft.com/dotnet/csharp/" },
-    { name: "Python", icon: <PythonIcon />, color: "#204160ff", description: "Useful for scripting, prototypes, and small tools.", siteUrl: "https://www.python.org/" },
+    { name: "Python", icon: <PythonIcon />, color: "#204160ff", description: "Comfortable for scripting, prototypes, and small tools.", siteUrl: "https://www.python.org/" },
+    { name: "HTML/CSS", icon: <><SiHtml5 /><SiCss3 /></>, color: "#e34f26", description: "Core building blocks for structured and responsive interfaces." },
+    { name: "TypeScript", icon: <SiTypescript />, color: "#3178c6", description: "Useful for typed frontend and application code with better structure.", siteUrl: "https://www.typescriptlang.org/" },
+    { name: "Tailwind CSS", icon: <SiTailwindcss />, color: "#38bdf8", description: "A utility-first CSS framework for fast interface styling.", siteUrl: "https://tailwindcss.com/" },
   ],
-  Tools: [
+  Frameworks: [
     { name: "React", icon: <ReactIcon />, color: "#61DAFB", description: "Building frontends with components and reusable UI.", siteUrl: "https://react.dev/" },
     { name: "Angular", icon: <SiAngular />, color: "#dd0031", description: "Structured frontend development for larger web applications.", siteUrl: "https://angular.dev/" },
-    { name: "Git", icon: <GitIcon />, color: "#6a2216ff", description: "Version control for collaboration, branches, and commits.", siteUrl: "https://git-scm.com/" },
     { name: "Flutter", icon: <FlutterIcon />, color: "#073860ff", description: "Cross-platform app development from one codebase.", siteUrl: "https://flutter.dev/" },
   ],
-  GameDev: [
+  Tools: [
+    { name: "Git", icon: <GitIcon />, color: "#6a2216ff", description: "Version control for collaboration, branches, and commits.", siteUrl: "https://git-scm.com/" },
+    { name: "Firebase", icon: <SiFirebase />, color: "#ffca28", description: "Backend services for auth, databases, and app data.", siteUrl: "https://firebase.google.com/" },
+    { name: "Docker", icon: <SiDocker />, color: "#2496ed", description: "Container tooling for reproducible development and deployment.", siteUrl: "https://www.docker.com/" },
+  ],
+  GameDevelopment: [
     { name: "Unity", icon: <UnityIcon />, color: "#777", description: "Engine for 2D/3D games, prototyping, and gameplay systems.", siteUrl: "https://unity.com/" },
     { name: "Godot", icon: <GodotIcon />, color: "#1a4465ff", description: "My preferred engine for larger game projects, gameplay systems, and long-term indie work.", siteUrl: "https://godotengine.org/" },
     { name: "Pixel Art", icon: <AsepriteIcon />, color: "#3f3332", description: "A visual style for sprites, icons, and small assets.", siteUrl: "https://www.aseprite.org/" },
@@ -103,7 +123,7 @@ export default function SkillsSection() {
 
         <div className="small-only mobile-small-only">
           <select
-            className="skill-dropdown"
+            className="select-control skill-dropdown"
             value={activeCategory}
             onChange={(e) => setActiveCategory(e.target.value)}
           >

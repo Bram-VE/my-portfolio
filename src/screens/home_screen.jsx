@@ -46,7 +46,6 @@ export default function Home() {
 
       <section id="home" className="home-content foldOpen">
         <div className="home-text-wrapper fadeIn">
-          <p className="home-kicker">Portfolio</p>
           <div className="home-heading-row">
             <h1 className="home-name">Bram Van Eccelpoel</h1>
             <div className="home-photo-mobile">
