@@ -2,7 +2,9 @@ import "../styles/base.css";
 import "../styles/home.css";
 import "../styles/animations.css";
 
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaGamepad, FaLaptopCode, FaMapMarkerAlt } from "react-icons/fa";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import myPhoto from "../assets/images/profile_pic.jpg";
 import myPhotoDevluke from "../assets/images/profile_pic_devluke.png";
 import shipPicture from "../assets/images/ship.png";
@@ -17,35 +19,70 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 export default function Home() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const targetId = location.state?.scrollToId;
+
+    if (!targetId) {
+      return;
+    }
+
+    const timeoutId = window.setTimeout(() => {
+      const element = document.getElementById(targetId);
+
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 80);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [location.state]);
+
   return (
     <main className="home-container">
       <Navbar />
       <WaveBackground />
 
-      <section className="home-content foldOpen">
+      <section id="home" className="home-content foldOpen">
         <div className="home-text-wrapper fadeIn">
-          <div className="flex">
+          <p className="home-kicker">Portfolio</p>
+          <div className="home-heading-row">
             <h1 className="home-name">Bram Van Eccelpoel</h1>
-            <div className="small-only mobile-small-only">
+            <div className="home-photo-mobile">
               <GlowImage
                 src={myPhoto}
                 alt="Bram Van Eccelpoel"
               />
             </div>
-
           </div>
 
           <p className="home-subtitle">
-            Application/Game Developer
+            Application and Game Developer
           </p>
 
-          <div className="home-location floatUpDown">
-            <FaMapMarkerAlt className="location-icon floatUpDown" />
-            <span>Belgium, Herselt</span>
+          <p className="home-intro">
+            I build practical applications and indie games, with a focus on .NET,
+            Godot, clean interfaces, and playful technical ideas.
+          </p>
+
+          <div className="home-meta">
+            <div className="home-location">
+              <FaMapMarkerAlt className="location-icon" />
+              <span>Herselt, Belgium</span>
+            </div>
+            <span className="home-role-pill">
+              <FaLaptopCode aria-hidden="true" />
+              App Dev
+            </span>
+            <span className="home-role-pill">
+              <FaGamepad aria-hidden="true" />
+              Game Dev
+            </span>
           </div>
         </div>
 
-        <div className="large-only">
+        <div className="home-photo-desktop">
           <GlowImage
             src={myPhoto}
             alt="Bram Van Eccelpoel"
@@ -60,7 +97,7 @@ export default function Home() {
           className="about-pixelart rock"
         />
 
-        <section className="about-card foldOpen">
+        <section className="about-card foldOpen" aria-labelledby="devluke-title">
           <div className="about-card-content">
             <img
               src={myPhotoDevluke}
@@ -82,7 +119,7 @@ export default function Home() {
                       alt="Devluke"
                       className="about-card-photo mobile-small-only"
                     />
-                    <h2>Also known as Devluke</h2>
+                    <h2 id="devluke-title">Also known as Devluke</h2>
                   </div>
                   <p>
                     Passionate indie game developer. I love creating games,

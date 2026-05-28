@@ -2,10 +2,25 @@ import "../styles/experience.css";
 
 const EXPERIENCES = [
   {
+    role: "Application Developer Intern",
+    org: "dotNET lab",
+    period: "2025 - 2026",
+    label: "Internship",
+    summary: "Appie's Legobib: reservation and inventory system for hospitals.",
+    details: [
+      "Built a reservation and inventory application",
+      "Integrated Rebrickable set data",
+      "Developed with a .NET backend and Angular frontend",
+      "Added Zitadel authentication, QR flows, and Excel support",
+      "Dockerised services and supported CI/CD delivery",
+    ],
+  },
+  {
     role: "Freelance Game Developer",
     org: "Various Indie Projects",
     period: "2023 - Present",
-    summary: "Indie game development",
+    label: "Independent",
+    summary: "Small indie games shaped from concept, code, art, and release.",
     details: [
       "Designed and programmed small indie games",
       "Created pixel-art assets and UI",
@@ -16,46 +31,41 @@ const EXPERIENCES = [
 
 export default function ExperienceSection() {
   return (
-    <div className="experience-card fadeIn">
-      <h3>Work Experience</h3>
+    <section className="experience-card fadeIn" aria-labelledby="experience-title">
+      <div className="experience-header">
+        <div>
+          <p className="section-kicker">Career Progress</p>
+          <h3 id="experience-title">Experience</h3>
+        </div>
+        <p className="experience-note">
+          Practical work across app development, game projects, and production tooling.
+        </p>
+      </div>
 
-      <p className="experience-note">
-        As a student, I am continuously building my skills and expect to gain
-        more professional experience in the coming years after graduation.
-      </p>
+      <div className="experience-list">
+        {EXPERIENCES.map((exp) => (
+          <article className="experience-item" key={exp.role}>
+            <div className="experience-content">
+              <div className="experience-top">
+                <div>
+                  <p className="experience-period">{exp.period}</p>
+                  <h4>{exp.role}</h4>
+                </div>
+                <span className="experience-label">{exp.label}</span>
+              </div>
 
-      <div className="experience-grid">
-        {EXPERIENCES.map((exp, index) => (
-          <div
-            key={exp.role}
-            className="experience-tile open"
-            style={{
-              "--flash-delay": `${index * 0.5}s`,
-              "--flash-duration": "6s",
-            }}
-          >
-            <div className="experience-top">
-              <h4>{exp.role}</h4>
-            </div>
+              <p className="experience-org">{exp.org}</p>
+              <p className="experience-summary">{exp.summary}</p>
 
-            <span className="experience-period">{exp.period}</span>
-
-            <p className="experience-org">{exp.org}</p>
-
-            <p className="experience-summary">
-              <span className="prompt">&gt;</span> {exp.summary}
-            </p>
-
-            <div className="experience-details">
-              <ul>
-                {exp.details.map((d) => (
-                  <li key={d}>{d}</li>
+              <ul className="experience-details">
+                {exp.details.map((detail) => (
+                  <li key={detail}>{detail}</li>
                 ))}
               </ul>
             </div>
-          </div>
+          </article>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

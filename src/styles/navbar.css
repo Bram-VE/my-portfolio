@@ -23,7 +23,10 @@
   gap: 0.5rem;
 }
 
-.navbar button {
+.navbar-left > button,
+.navbar-right > button,
+.navbar-dropdown button,
+.navbar .resume-navbar-button {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 1rem;
@@ -33,17 +36,27 @@
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
   transition: all 0.25s ease;
+  text-decoration: none;
+  height: 40px;
+  box-shadow: var(--shadow-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.navbar button:hover {
+.navbar-left > button:hover,
+.navbar-right > button:hover,
+.navbar .resume-navbar-button:hover {
   background: rgba(255, 255, 255, 0.12);
   border-color: rgba(255, 255, 255, 0.25);
   color: #fff;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-md);
 }
 
-.navbar button:active {
+.navbar-left > button:active,
+.navbar-right > button:active,
+.navbar .resume-navbar-button:active {
   transform: translateY(0);
 }
 
@@ -91,7 +104,8 @@
   }
 }
 
-.navbar-dropdown button {
+.navbar-dropdown button,
+.navbar-dropdown .resume-navbar-button {
   width: 100%;
   text-align: left;
   margin: 0.25rem 0;
@@ -99,7 +113,8 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.navbar-dropdown button:hover {
+.navbar-dropdown button:hover,
+.navbar-dropdown .resume-navbar-button:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.2);
 }
@@ -122,7 +137,9 @@
     flex-direction: column;
   }
 
-  .navbar button {
+  .navbar-left > button,
+  .navbar-right > button,
+  .navbar .resume-navbar-button {
     padding: 0.55rem 1rem;
     font-size: 0.95rem;
   }

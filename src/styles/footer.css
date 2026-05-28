@@ -1,44 +1,101 @@
 .footer {
   width: 100%;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 0 0.5rem;
 }
 
 .footer-card {
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
   background: var(--bg);
-  border-radius: var(--space-md);
-  padding: 1rem 1.5rem;
-  box-shadow: var(--shadow-inset);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.25rem;
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  gap: 0.8rem;
+}
 
+.footer-main {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  justify-content: space-between;
+  gap: 0.75rem;
   flex-wrap: wrap;
 }
 
-.footer-left,
-.footer-right {
-  display: flex;
+.footer-item,
+.footer-ai-note,
+.footer-updated {
+  display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
+  gap: 0.45rem;
   color: var(--text-muted);
+  font-size: 0.86rem;
 }
 
+.footer-ai-note {
+  width: 100%;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 0.8rem;
+  line-height: 1.5;
+}
+
+.footer-ai-note svg,
 .footer-icon {
+  color: var(--accent);
   font-size: 0.9rem;
 }
 
 .react-icon {
-  font-size: 1rem;
   color: #61dafb;
+  font-size: 1rem;
 }
 
 @media (max-width: 600px) {
+  .footer {
+    padding: 1.25rem 0 0.25rem;
+  }
+
   .footer-card {
-    justify-content: center;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    box-shadow: none;
     text-align: center;
+    gap: 0.9rem;
+  }
+
+  .footer-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .footer-ai-note {
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 32rem;
+    margin: 0 auto;
+    padding-top: 0.9rem;
+  }
+
+  .footer-item,
+  .footer-ai-note,
+  .footer-updated {
+    justify-content: center;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .footer-card {
+    padding: 0.85rem;
+  }
+
+  .footer-item,
+  .footer-ai-note,
+  .footer-updated {
+    font-size: 0.9rem;
   }
 }

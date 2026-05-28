@@ -18,18 +18,43 @@
   flex-wrap: wrap;
 }
 
-.education-experience{
+.education-experience {
+  flex: 1 1 620px;
   margin-top: 0;
-  display: flex;
-  gap: 2rem
+  display: grid;
+  grid-template-columns: minmax(280px, 0.85fr) minmax(360px, 1.35fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.education-experience .education-card,
+.education-experience .experience-card {
+  margin-bottom: 0;
 }
 
 @media (max-width: 768px) {
-  .education-experience{
-    display: block;
+  .profile-container {
+    gap: 1.5rem;
+  }
+
+  .education-experience {
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 1.5rem;
   }
 
   .section-title {
-    font-size: var(--text-lg);
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .education-experience {
+    gap: 1.35rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
   }
 }

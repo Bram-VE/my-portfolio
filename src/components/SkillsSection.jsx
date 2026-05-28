@@ -14,34 +14,44 @@ import AsepriteIcon from "../assets/svgs/AsepriteIcon.jsx";
 import SocialIcon from "../assets/svgs/SocialIcon.jsx";
 import StructuredIcon from "../assets/svgs/StructuredIcon.jsx";
 import DrivenIcon from "../assets/svgs/DrivenIcon.jsx";
+import { SiAngular } from "react-icons/si";
+
+const CATEGORY_LABELS = {
+  Programming: "Programming",
+  Tools: "Tools",
+  GameDev: "Game Development",
+  SoftSkills: "Soft skills",
+};
 
 const SKILL_CATEGORIES = {
   Programming: [
-    { name: ".NET", icon: <DotNetIcon />, color: "#512BD4" },
-    { name: "C#", icon: <CSharpIcon />, color: "#c2c9e4ff" },
-    { name: "Python", icon: <PythonIcon />, color: "#204160ff" },
+    { name: ".NET", icon: <DotNetIcon />, color: "#512BD4", description: "My strongest backend preference for building APIs, app logic, and reliable application services.", siteUrl: "https://dotnet.microsoft.com/" },
+    { name: "C#", icon: <CSharpIcon />, color: "#c2c9e4ff", description: "A language I mainly use through Unity for gameplay scripts and game logic.", siteUrl: "https://learn.microsoft.com/dotnet/csharp/" },
+    { name: "Python", icon: <PythonIcon />, color: "#204160ff", description: "Useful for scripting, prototypes, and small tools.", siteUrl: "https://www.python.org/" },
   ],
   Tools: [
-    { name: "React", icon: <ReactIcon />, color: "#61DAFB" },
-    { name: "Git", icon: <GitIcon />, color: "#6a2216ff" },
-    { name: "Flutter", icon: <FlutterIcon />, color: "#073860ff" },
+    { name: "React", icon: <ReactIcon />, color: "#61DAFB", description: "Building frontends with components and reusable UI.", siteUrl: "https://react.dev/" },
+    { name: "Angular", icon: <SiAngular />, color: "#dd0031", description: "Structured frontend development for larger web applications.", siteUrl: "https://angular.dev/" },
+    { name: "Git", icon: <GitIcon />, color: "#6a2216ff", description: "Version control for collaboration, branches, and commits.", siteUrl: "https://git-scm.com/" },
+    { name: "Flutter", icon: <FlutterIcon />, color: "#073860ff", description: "Cross-platform app development from one codebase.", siteUrl: "https://flutter.dev/" },
   ],
   GameDev: [
-    { name: "Unity", icon: <UnityIcon />, color: "#777" },
-    { name: "Godot", icon: <GodotIcon />, color: "#1a4465ff" },
-    { name: "Pixel Art", icon: <AsepriteIcon />, color: "#3f3332" },
-    { name: "Itch.io", icon: <ItchIcon />, color: "#FF5A5F" },
+    { name: "Unity", icon: <UnityIcon />, color: "#777", description: "Engine for 2D/3D games, prototyping, and gameplay systems.", siteUrl: "https://unity.com/" },
+    { name: "Godot", icon: <GodotIcon />, color: "#1a4465ff", description: "My preferred engine for larger game projects, gameplay systems, and long-term indie work.", siteUrl: "https://godotengine.org/" },
+    { name: "Pixel Art", icon: <AsepriteIcon />, color: "#3f3332", description: "A visual style for sprites, icons, and small assets.", siteUrl: "https://www.aseprite.org/" },
+    { name: "Itch.io", icon: <ItchIcon />, color: "#FF5A5F", description: "A platform for publishing prototypes and small games.", siteUrl: "https://itch.io/" },
   ],
   SoftSkills: [
-    { name: "Social / Open", icon: <SocialIcon />, color: "#5b72d9" },
-    { name: "Structured", icon: <StructuredIcon />, color: "#865c0e" },
-    { name: "Driven", icon: <DrivenIcon />, color: "#278032" },
+    { name: "Social / Open", icon: <SocialIcon />, color: "#5b72d9", description: "I communicate easily and enjoy working with others." },
+    { name: "Structured", icon: <StructuredIcon />, color: "#865c0e", description: "I like clear steps, good overview, and clean code." },
+    { name: "Driven", icon: <DrivenIcon />, color: "#278032", description: "I pick up what is needed quickly and work with focus." },
   ],
 };
 
 export default function SkillsSection() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [hoveredSkill, setHoveredSkill] = useState(null);
+  const [selectedSkill, setSelectedSkill] = useState(".NET");
 
   const allSkills = Object.entries(SKILL_CATEGORIES).flatMap(
     ([category, skills]) =>
@@ -53,37 +63,41 @@ export default function SkillsSection() {
       ? allSkills
       : allSkills.filter((s) => s.category === activeCategory);
 
-  // Columns for desktop
-  const maxRows = 7;
+  const activeSkill =
+    allSkills.find((skill) => skill.name === hoveredSkill) ||
+    allSkills.find((skill) => skill.name === selectedSkill) ||
+    allSkills[0];
+
+  const maxRows = 6;
   const numCols = Math.ceil(listSkills.length / maxRows);
   const columns = Array.from({ length: numCols }, (_, i) =>
     listSkills.slice(i * maxRows, i * maxRows + maxRows)
   );
 
   return (
-    <section className="skills-card fadeIn">
-      <h3>Skills</h3>
+    <section className="skills-card fadeIn" aria-labelledby="skills-title">
+      <div className="skills-header">
+        <p className="section-kicker">Technical Stack</p>
+        <h3 id="skills-title">Skills</h3>
+      </div>
 
       <div className="skill-categories">
         <div className="button-group large-only">
-          <div>
-            <button
-              className={activeCategory === "All" ? "active" : "unactive"}
-              onClick={() => setActiveCategory("All")}
-            >
-              All
-            </button>
-          </div>
+          <button
+            className={activeCategory === "All" ? "active" : "unactive"}
+            onClick={() => setActiveCategory("All")}
+          >
+            All
+          </button>
 
           {Object.keys(SKILL_CATEGORIES).map((cat) => (
-            <div key={cat}>
             <button
+                key={cat}
                 className={activeCategory === cat ? "active" : "unactive"}
                 onClick={() => setActiveCategory(cat)}
               >
-                {cat}
+                {CATEGORY_LABELS[cat]}
             </button>
-            </div>
           ))}
         </div>
 
@@ -96,7 +110,7 @@ export default function SkillsSection() {
             <option value="All">All</option>
             {Object.keys(SKILL_CATEGORIES).map((cat) => (
               <option key={cat} value={cat}>
-                {cat}
+                {CATEGORY_LABELS[cat]}
               </option>
             ))}
           </select>
@@ -104,56 +118,94 @@ export default function SkillsSection() {
       </div>
 
       <div className="skills-layout">
-        <div className="skills-list">
-          {columns.map((col, colIndex) => (
-            <div key={colIndex} className="skills-column">
-              {col.map((skill) => (
+        <div className="skills-main-row">
+          <div className="skills-list">
+            {columns.map((col, colIndex) => (
+              <div key={colIndex} className="skills-column">
+                {col.map((skill) => (
+                  <button
+                    key={skill.name}
+                    className={`skills-list-item ${
+                      hoveredSkill === skill.name ? "hovered" : ""
+                    } ${selectedSkill === skill.name ? "selected" : ""}`}
+                    onMouseEnter={() => setHoveredSkill(skill.name)}
+                    onMouseLeave={() => setHoveredSkill(null)}
+                    onClick={() => setSelectedSkill(skill.name)}
+                    type="button"
+                  >
+                    <span
+                      className="skills-list-dot"
+                      style={{ background: skill.color }}
+                    >
+                      {skill.icon}
+                    </span>
+                    <span>{skill.name}</span>
+                  </button>
+                ))}
+              </div>
+            ))}
+          </div>
+
+          <div className="skills-bubble-container large-only">
+            {allSkills.map((skill, index) => {
+              const inactive =
+                activeCategory !== "All" &&
+                skill.category !== activeCategory;
+
+              return (
                 <div
                   key={skill.name}
-                  className={`skills-list-item ${
+                  className={`skill-bubble ${
                     hoveredSkill === skill.name ? "hovered" : ""
-                  }`}
-                  onMouseEnter={() => setHoveredSkill(skill.name)}
-                  onMouseLeave={() => setHoveredSkill(null)}
+                  } ${inactive ? "inactive" : "active"}`}
+                  style={{
+                    "--color": skill.color,
+                    left: `${15 + (index * 19) % 70}%`,
+                    top: `${20 + (index * 23) % 60}%`,
+                    animationDuration: `${16 + index * 2}s`,
+                  }}
+                  onMouseEnter={() => !inactive && setHoveredSkill(skill.name)}
+                  onMouseLeave={() => !inactive && setHoveredSkill(null)}
+                  onClick={() => !inactive && setSelectedSkill(skill.name)}
                 >
-                  <span
-                    className="skills-list-dot"
-                    style={{ background: skill.color }}
-                  >
-                    {skill.icon}
-                  </span>
-                  <span>{skill.name}</span>
+                  <div className="bubble-dot">{skill.icon}</div>
                 </div>
-              ))}
-            </div>
-          ))}
+              );
+            })}
+          </div>
         </div>
 
-        <div className="skills-bubble-container large-only">
-          {allSkills.map((skill, index) => {
-            const inactive =
-              activeCategory !== "All" &&
-              skill.category !== activeCategory;
-
-            return (
-              <div
-                key={skill.name}
-                className={`skill-bubble ${
-                  hoveredSkill === skill.name ? "hovered" : ""
-                } ${inactive ? "inactive" : "active"}`}
-                style={{
-                  "--color": skill.color,
-                  left: `${15 + (index * 19) % 70}%`,
-                  top: `${20 + (index * 23) % 60}%`,
-                  animationDuration: `${16 + index * 2}s`,
-                }}
-                onMouseEnter={() => !inactive && setHoveredSkill(skill.name)}
-                onMouseLeave={() => !inactive && setHoveredSkill(null)}
-              >
-                <div className="bubble-dot">{skill.icon}</div>
+        <div className="skills-context-card">
+          <p className="skills-context-label">{CATEGORY_LABELS[activeSkill.category] ?? activeSkill.category}</p>
+          {activeSkill ? (
+            <>
+              <div className="skills-context-header">
+                <span
+                  className="skills-context-dot"
+                  style={{ background: activeSkill.color }}
+                >
+                  {activeSkill.icon}
+                </span>
+                <div>
+                  <h4>{activeSkill.name}</h4>
+                  <p>{CATEGORY_LABELS[activeSkill.category] ?? activeSkill.category}</p>
+                </div>
               </div>
-            );
-          })}
+              <p className="skills-context-text">{activeSkill.description}</p>
+              {activeSkill.siteUrl ? (
+                <a
+                  className="skills-context-link"
+                  href={activeSkill.siteUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Visit official site
+                </a>
+              ) : null}
+            </>
+          ) : (
+            <p className="skills-context-text">Hover or tap a skill to see more context.</p>
+          )}
         </div>
       </div>
     </section>

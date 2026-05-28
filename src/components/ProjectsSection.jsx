@@ -1,38 +1,44 @@
 import "../styles/projects.css";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
-  FaGithub,
+  FaCode,
   FaExternalLinkAlt,
   FaGamepad,
-  FaCode,
+  FaGithub,
   FaGlobe,
+  FaMobileAlt,
   FaTimes,
-  FaMobileAlt
 } from "react-icons/fa";
 
-import itchCover from "../assets/images/projects/itchIo_profile_cover.png";
 import appiesLegobibCover from "../assets/images/projects/appies_legobib_cover.png";
 import arProjectCover from "../assets/images/projects/ar_project_cover.png";
 import blinkOdysseyCover from "../assets/images/projects/blink_odyssey_cover.png";
+import itchCover from "../assets/images/projects/itchIo_profile_cover.png";
 import kwartelBoekCover from "../assets/images/projects/kwartel_boek_cover.png";
 
 const projects = [
   {
     id: 1,
     title: "Devluke - Itch.io Portfolio",
-    category: "web",
+    category: "game",
     cover: itchCover,
     video: "https://www.youtube.com/embed/_XCnQWzBsbQ",
-    shortDescription: "My library of all indie games published on Itch.io.",
+    role: "Game developer, team lead, artist, and programmer",
+    shortDescription: "A collection of indie games and prototypes published under Devluke.",
     description:
-      "Devluke is my personal portfolio site on Itch.io, showcasing all my indie game projects with detailed descriptions, media, and download links.",
-    contributions: [
-      "Designed and developed the entire portfolio site",
-      "Created most of the game assets and promotional materials",
-      "Implemented game mechanics and level design for featured games"
+      "My Itch.io page brings together the games I made as solo projects and team projects. It shows my growth as an indie developer: designing game loops, making pixel-art assets, programming mechanics, packaging builds, and presenting projects clearly to players.",
+    responsibilities: [
+      "Built most solo projects from idea to release, including design, code, art, and publishing",
+      "Worked in teams on selected projects as leader, artist, and programmer",
+      "Used feedback from players and teammates to improve controls, pacing, and presentation",
     ],
-    skills: ["Game Design", "Godot", "Pixel Art"],
-    demo: "https://devlukedevlog.itch.io"
+    learnings: [
+      "A game needs a clear core loop before extra features matter",
+      "Good presentation makes small projects feel more complete and easier to trust",
+      "Leading a small team taught me to divide tasks clearly and keep scope realistic",
+    ],
+    skills: ["Godot", "Game Design", "Pixel Art", "Team Leadership", "Itch.io"],
+    demo: "https://devlukedevlog.itch.io",
   },
   {
     id: 2,
@@ -40,15 +46,22 @@ const projects = [
     category: "web",
     cover: appiesLegobibCover,
     video: "https://www.youtube.com/embed/d4vYPId-ngY",
-    shortDescription: "A place where children can play with Lego's.",
+    role: "Backend developer and team lead",
+    shortDescription: "Reservation and inventory system for a hospital Lego library.",
     description:
-      "We developed 'Appie's Legobib' to provide a safe and fun environment for children to play with Lego bricks. This app was made in collaboration with Bricks And More. It was made for children staying long-term in hospitals.",
-    contributions: [
-      "Built most of the backend functionality",
-      "Implemented the first Admin panel prototype",
-      "Led a team of 5 developers"
+      "Appie's Legobib is a full-stack system made for Bricks And More to help children in long-term hospital care reserve and play with Lego sets. The project included inventory management, reservations, admin workflows, authentication, QR flows, and deployment work.",
+    responsibilities: [
+      "Built a large part of the .NET backend and core business logic",
+      "Implemented the first admin panel prototype and helped shape management workflows",
+      "Led a team of 5 developers and helped coordinate planning, reviews, and delivery",
+      "Connected set data and inventory flows so the app could support real-world use",
     ],
-    skills: [".Net", "Nx", "Git", "Teamwork", "Leadership"]
+    learnings: [
+      "Real users need reliable flows more than flashy features",
+      "Team leadership means keeping scope, communication, and ownership clear",
+      ".NET works best for me when domain logic is structured and easy to test",
+    ],
+    skills: [".NET", "Angular", "Nx", "Git", "Teamwork", "Leadership"],
   },
   {
     id: 3,
@@ -56,15 +69,22 @@ const projects = [
     category: "game",
     cover: arProjectCover,
     video: "https://www.youtube.com/embed/cnlwDA4L_zc",
-    shortDescription: "A tower defense AR game for mobile devices.",
+    role: "Flutter and Firebase developer",
+    shortDescription: "A mobile AR tower defense game with connected app features.",
     description:
-      "An Augmented Reality tower defense game where players defend their castle against waves of enemies using AR technology.",
-    contributions: [
-      "Designed enemy AI and wave system",
-      "Built frontend with Flutter",
-      "Handled communication with Unity AR module"
+      "AR Castle Defender is an augmented reality tower defense concept where players defend a castle against enemy waves on mobile. My main focus was the Flutter application layer and Firebase integration around the AR gameplay.",
+    responsibilities: [
+      "Built the Flutter screens and app structure around the game experience",
+      "Integrated Firebase for data handling and connected app features",
+      "Helped connect the mobile app flow with the Unity AR part of the project",
+      "Tested mobile behavior and adjusted UI flows for a smoother player experience",
     ],
-    skills: ["Unity", "Flutter", "Firebase", "AR Development"]
+    learnings: [
+      "AR projects need a strong bridge between gameplay and mobile app flow",
+      "Firebase is useful when rapid iteration and connected data are needed",
+      "Clear boundaries between Unity and Flutter make mixed-tech projects easier",
+    ],
+    skills: ["Flutter", "Firebase", "Unity", "AR Development", "Mobile UI"],
   },
   {
     id: 4,
@@ -72,16 +92,23 @@ const projects = [
     category: "game",
     cover: blinkOdysseyCover,
     demo: "/exes/blink_odyssey.exe",
-    shortDescription: "A prototype of a Clicker / Idle game.",
+    role: "Solo developer",
+    shortDescription: "An idle/clicker prototype about progression, missions, and rewards.",
     description:
-      "A prototype idle/clicker game focused on incremental progression through missions, gold, and equipment. You can download the game either trough clicking Demo or find it in the releases on my Github.",
-    contributions: [
-      "Developed the entire prototype",
-      "Implemented gameplay mechanics and UI",
-      "Optimized performance and fixed bugs"
+      "Blink Odyssey is a solo prototype where I explored incremental progression through gold, missions, equipment, upgrades, and UI feedback. The goal was to understand how idle games keep players moving through small but satisfying decisions.",
+    responsibilities: [
+      "Designed and programmed the complete prototype in Godot",
+      "Created the progression systems, mission flow, and reward logic",
+      "Built the UI and tuned feedback so upgrades felt readable and responsive",
+      "Packaged a downloadable build and documented the project on GitHub",
     ],
-    skills: ["Godot", "UI/UX", "Game Mechanics"],
-    github: "https://github.com/DevlukeDevlog/Blink-Odyssey"
+    learnings: [
+      "Progression systems need careful balancing even in small prototypes",
+      "Readable UI is critical when a game has many numbers and upgrades",
+      "Solo projects taught me to cut features when they do not support the core loop",
+    ],
+    skills: ["Godot", "Game Mechanics", "UI/UX", "Balancing"],
+    github: "https://github.com/DevlukeDevlog/Blink-Odyssey",
   },
   {
     id: 5,
@@ -89,67 +116,70 @@ const projects = [
     category: "app",
     cover: kwartelBoekCover,
     video: "https://www.youtube.com/embed/kNBDVwrQXTY",
-    shortDescription: "An app to manage bird and egg data.",
+    role: "Solo app developer",
+    shortDescription: "A Flutter app for managing bird and egg incubation data.",
     description:
-      "An app created to digitally track bird information and egg incubation, replacing manual paper tracking.",
-    contributions: [
-      "Designed business logic",
-      "Built Flutter frontend with Firebase backend",
-      "Gathered requirements directly from client"
+      "Kwartel Boek replaces paper tracking with a digital workflow for bird information and egg incubation. The app was shaped around practical client needs: storing data clearly, reducing manual work, and keeping the workflow simple enough for repeated use.",
+    responsibilities: [
+      "Gathered requirements directly from the client and translated them into app flows",
+      "Designed the data structure and business logic for birds, eggs, and incubation",
+      "Built the Flutter frontend and connected Firebase as the backend",
+      "Adjusted the interface around practical daily use instead of unnecessary complexity",
     ],
-    skills: ["Flutter", "Firebase", "Client Communication"]
-  }
+    learnings: [
+      "Client communication helps reveal the real problem behind a feature request",
+      "Simple workflows often matter more than adding many options",
+      "Data structure choices early in a project strongly affect future maintainability",
+    ],
+    skills: ["Flutter", "Firebase", "Client Communication", "App Design"],
+  },
+];
+
+const categories = [
+  { id: "all", label: "All Projects", icon: FaCode },
+  { id: "game", label: "Games", icon: FaGamepad },
+  { id: "web", label: "Websites", icon: FaGlobe },
+  { id: "app", label: "Applications", icon: FaMobileAlt },
 ];
 
 export default function ProjectsSection() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedProject, setSelectedProject] = useState(null);
 
-  // 🔒 Lock background scroll when modal is open
   useEffect(() => {
-    if (selectedProject) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = selectedProject ? "hidden" : "";
 
     return () => {
       document.body.style.overflow = "";
     };
   }, [selectedProject]);
 
-  const categories = [
-    { id: "all", label: "All Projects", icon: FaCode },
-    { id: "game", label: "Games", icon: FaGamepad },
-    { id: "web", label: "Websites", icon: FaGlobe },
-    { id: "app", label: "Applications", icon: FaMobileAlt }
-  ];
-
   const filteredProjects =
     selectedCategory === "all"
       ? projects
-      : projects.filter(p => p.category === selectedCategory);
+      : projects.filter((project) => project.category === selectedCategory);
 
   return (
     <section id="projects" className="projects-section">
       <h2 className="section-title fadeIn">Projects</h2>
 
       <div className="projects-showcase">
-        <nav className="project-categories">
+        <nav className="project-categories" aria-label="Project categories">
           <div className="large-only">
-            <div className="button-group">
-              {categories.map(cat => {
-                const Icon = cat.icon;
+            <div className="project-button-group">
+              {categories.map((category) => {
+                const Icon = category.icon;
+
                 return (
-                  <div key={cat.id}>
-                    <button
-                      onClick={() => setSelectedCategory(cat.id)}
-                      className={selectedCategory === cat.id ? "active" : "unactive"}
-                    >
-                      <Icon style={{ marginRight: "0.5rem" }} />
-                      {cat.label}
-                    </button>
-                  </div>
+                  <button
+                    key={category.id}
+                    type="button"
+                    onClick={() => setSelectedCategory(category.id)}
+                    className={selectedCategory === category.id ? "active" : "unactive"}
+                  >
+                    <Icon aria-hidden="true" />
+                    {category.label}
+                  </button>
                 );
               })}
             </div>
@@ -159,11 +189,11 @@ export default function ProjectsSection() {
             <select
               className="project-dropdown"
               value={selectedCategory}
-              onChange={e => setSelectedCategory(e.target.value)}
+              onChange={(event) => setSelectedCategory(event.target.value)}
             >
-              {categories.map(cat => (
-                <option key={cat.id} value={cat.id}>
-                  {cat.label}
+              {categories.map((category) => (
+                <option key={category.id} value={category.id}>
+                  {category.label}
                 </option>
               ))}
             </select>
@@ -172,39 +202,45 @@ export default function ProjectsSection() {
 
         <div className="projects-grid">
           {filteredProjects.map((project, index) => (
-            <div
+            <article
               key={project.id}
               className="project-tile fadeIn"
-              style={{ animationDelay: `${index * 0.1}s` }}
-              onClick={() => setSelectedProject(project)}
+              style={{ animationDelay: `${index * 0.08}s` }}
             >
-              <div className="project-image">
-                <img src={project.cover} alt={project.title} />
-                <div className="project-overlay">
-                  <button className="view-details-btn">View Details</button>
+              <button
+                type="button"
+                className="project-card-button"
+                onClick={() => setSelectedProject(project)}
+                aria-label={`View details for ${project.title}`}
+              >
+                <div className="project-image">
+                  <img
+                    src={project.cover}
+                    alt={`${project.title} project preview`}
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
-              </div>
 
-              <div className="project-info">
-                <h3>{project.title}</h3>
-                <p className="project-description">
-                  {project.shortDescription}
-                </p>
+                <div className="project-info">
+                  <div>
+                    <h3>{project.title}</h3>
+                    <p className="project-description">{project.shortDescription}</p>
+                  </div>
 
-                <div className="project-skills">
-                  {project.skills.slice(0, 3).map(skill => (
-                    <span key={skill} className="skill-tag">
-                      {skill}
-                    </span>
-                  ))}
-                  {project.skills.length > 3 && (
-                    <span className="skill-tag">
-                      +{project.skills.length - 3}
-                    </span>
-                  )}
+                  <div className="project-skills">
+                    {project.skills.slice(0, 4).map((skill) => (
+                      <span key={skill} className="skill-tag">
+                        {skill}
+                      </span>
+                    ))}
+                    {project.skills.length > 4 && (
+                      <span className="skill-tag">+{project.skills.length - 4}</span>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </div>
+              </button>
+            </article>
           ))}
         </div>
       </div>
@@ -213,20 +249,29 @@ export default function ProjectsSection() {
         <div
           className="project-modal-backdrop"
           onClick={() => setSelectedProject(null)}
+          role="presentation"
         >
           <div
             className="project-modal foldOpen"
-            onClick={e => e.stopPropagation()}
+            onClick={(event) => event.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="project-modal-title"
           >
             <button
+              type="button"
               className="modal-close-btn"
               onClick={() => setSelectedProject(null)}
+              aria-label="Close project details"
             >
               <FaTimes />
             </button>
 
             <div className="modal-header">
-              <h2>{selectedProject.title}</h2>
+              <p className="section-kicker">Project Case Study</p>
+              <h2 id="project-modal-title">{selectedProject.title}</h2>
+              <p className="modal-role">{selectedProject.role}</p>
+
               <div className="modal-links">
                 {selectedProject.github && (
                   <a
@@ -255,21 +300,34 @@ export default function ProjectsSection() {
                   <iframe
                     src={selectedProject.video}
                     title={selectedProject.title}
+                    loading="lazy"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   />
                 </div>
               )}
 
-              <p className="modal-description">
-                {selectedProject.description}
-              </p>
+              <p className="modal-description">{selectedProject.description}</p>
 
               <div className="modal-section">
-                <h4>Key Contributions</h4>
-                <ul className="contributions-list">
-                  {selectedProject.contributions.map((c, i) => (
-                    <li key={i}>{c}</li>
+                <h4>My Role</h4>
+                <p className="modal-section-text">{selectedProject.role}</p>
+              </div>
+
+              <div className="modal-section">
+                <h4>What I Did</h4>
+                <ul className="project-detail-list">
+                  {selectedProject.responsibilities.map((responsibility) => (
+                    <li key={responsibility}>{responsibility}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="modal-section">
+                <h4>Key Learnings</h4>
+                <ul className="project-detail-list learning-list">
+                  {selectedProject.learnings.map((learning) => (
+                    <li key={learning}>{learning}</li>
                   ))}
                 </ul>
               </div>
@@ -277,7 +335,7 @@ export default function ProjectsSection() {
               <div className="modal-section">
                 <h4>Technologies Used</h4>
                 <div className="modal-skill-tags">
-                  {selectedProject.skills.map(skill => (
+                  {selectedProject.skills.map((skill) => (
                     <span key={skill} className="skill-tag">
                       {skill}
                     </span>

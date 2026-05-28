@@ -82,10 +82,9 @@
     0 -1px 0 rgba(255, 255, 255, 0.2),
     0 28px 56px rgba(0, 0, 0, 0.7);
 
-  /* Accent glow (orange) */
+  /* Former glow token, now neutral shadow */
   --shadow-glow:
-    0 0 0 1px rgba(249, 115, 22, 0.5),
-    0 12px 40px rgba(249, 115, 22, 0.45);
+    0 4px 12px rgba(0, 0, 0, 0.35);
 
   /* Inset / inward shadow */
   --shadow-inset:
@@ -127,6 +126,5 @@
     0 16px 40px rgba(0, 0, 0, 0.2);
 
   --shadow-glow:
-    0 0 0 1px rgba(124, 124, 255, 0.25),
-    0 8px 24px rgba(124, 124, 255, 0.25);
+    0 4px 12px rgba(0, 0, 0, 0.18);
 }
