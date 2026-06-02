@@ -239,6 +239,56 @@
   outline-offset: 2px;
 }
 
+.soft-skills-list {
+  display: flex;
+  gap: 0.9rem;
+  margin-top: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.soft-skill-card {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  min-width: 220px;
+  max-width: 380px;
+  border-radius: var(--radius-md);
+  padding: 0.75rem;
+  /* Match technical skill item appearance (brighter, with a subtle border) */
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--border-subtle);
+}
+
+/* No hover effect for soft-skill cards */
+
+.soft-skill-dot {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.soft-skill-dot svg {
+  width: 60%;
+  height: 60%;
+}
+
+.soft-skill-content h5 {
+  margin: 0;
+  color: var(--text-highlight);
+  font-size: 1rem;
+}
+
+.soft-skill-content p {
+  margin: 0.35rem 0 0;
+  color: var(--text-main);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
 @media (max-width: 768px) {
   .skills-card {
     background: transparent;
@@ -303,6 +353,18 @@
   .skills-context-header p,
   .skills-context-text {
     font-size: 1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  /* On large screens keep all three soft-skill cards in one row */
+  .soft-skills-list {
+    flex-wrap: nowrap;
+  }
+
+  .soft-skill-card {
+    flex: 1 1 0;
+    max-width: calc((100% - 1.8rem) / 3);
   }
 }
 

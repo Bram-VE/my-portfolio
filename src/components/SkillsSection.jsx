@@ -33,7 +33,6 @@ const CATEGORY_LABELS = {
   Frameworks: "Frameworks",
   Tools: "Tools",
   GameDevelopment: "Game Development",
-  SoftSkills: "Soft skills",
 };
 
 const SKILL_CATEGORIES = {
@@ -61,12 +60,31 @@ const SKILL_CATEGORIES = {
     { name: "Pixel Art", icon: <AsepriteIcon />, color: "#3f3332", description: "A visual style for sprites, icons, and small assets.", siteUrl: "https://www.aseprite.org/" },
     { name: "Itch.io", icon: <ItchIcon />, color: "#FF5A5F", description: "A platform for publishing prototypes and small games.", siteUrl: "https://itch.io/" },
   ],
-  SoftSkills: [
-    { name: "Social / Open", icon: <SocialIcon />, color: "#5b72d9", description: "I communicate easily and enjoy working with others." },
-    { name: "Structured", icon: <StructuredIcon />, color: "#865c0e", description: "I like clear steps, good overview, and clean code." },
-    { name: "Driven", icon: <DrivenIcon />, color: "#278032", description: "I pick up what is needed quickly and work with focus." },
-  ],
 };
+
+const SOFT_SKILLS = [
+  {
+    name: "Social / Open",
+    icon: <SocialIcon />,
+    color: "#5b72d9",
+    description:
+      "I thrive in open, collaborative environments and prefer working with others rather than isolated tasks. Going to Thomas More helped me grow more social and comfortable communicating in teams.",
+  },
+  {
+    name: "Structured",
+    icon: <StructuredIcon />,
+    color: "#865c0e",
+    description:
+      "Through game development I learned to keep projects well-organized, consistent folder structures, clear naming, and logical asset grouping so work stays maintainable.",
+  },
+  {
+    name: "Driven",
+    icon: <DrivenIcon />,
+    color: "#278032",
+    description:
+      "I enjoy tackling new challenges and building projects that teach me new skills. I focus on learning-by-doing and shipping small prototypes quickly.",
+  },
+];
 
 export default function SkillsSection() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -95,11 +113,14 @@ export default function SkillsSection() {
   );
 
   return (
+    <>
     <section className="skills-card fadeIn" aria-labelledby="skills-title">
       <div className="skills-header">
         <p className="section-kicker">Technical Stack</p>
         <h3 id="skills-title">Skills</h3>
       </div>
+      
+      
 
       <div className="skill-categories">
         <div className="button-group large-only">
@@ -229,5 +250,27 @@ export default function SkillsSection() {
         </div>
       </div>
     </section>
+
+    <section className="skills-card fadeIn" aria-labelledby="soft-skills-title">
+      <div className="skills-header">
+        <p className="section-kicker">Soft Skills</p>
+        <h3 id="soft-skills-title">How I work</h3>
+      </div>
+
+      <div className="soft-skills-list">
+        {SOFT_SKILLS.map((s) => (
+          <div key={s.name} className="soft-skill-card">
+            <span className="soft-skill-dot" style={{ background: s.color }}>
+              {s.icon}
+            </span>
+            <div className="soft-skill-content">
+              <h5>{s.name}</h5>
+              <p>{s.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+    </>
   );
 }
