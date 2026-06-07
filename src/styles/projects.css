@@ -10,7 +10,7 @@
 .project-categories {
   display: flex;
   justify-content: center;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.4rem;
 }
 
 .project-button-group {
@@ -23,25 +23,25 @@
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  border: 1px solid var(--border-subtle);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-sm);
   padding: 0.5rem 0.8rem;
-  color: var(--text-main);
-  background: rgba(255, 255, 255, 0.035);
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.02);
   font: inherit;
   font-size: 0.9rem;
   cursor: pointer;
 }
 
 .project-button-group button:hover {
-  border-color: rgba(249, 115, 22, 0.3);
+  border-color: rgba(249, 115, 22, 0.24);
   color: var(--text-highlight);
 }
 
 .project-button-group button.active {
-  border-color: rgba(249, 115, 22, 0.35);
+  border-color: rgba(249, 115, 22, 0.3);
   color: var(--accent);
-  background: rgba(249, 115, 22, 0.08);
+  background: rgba(249, 115, 22, 0.05);
 }
 
 .project-button-group button:focus-visible,
@@ -55,7 +55,7 @@
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .project-tile {
@@ -75,14 +75,14 @@
   background: var(--bg);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-xs);
   cursor: pointer;
   transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
 }
 
 .project-card-button:hover {
-  border-color: rgba(249, 115, 22, 0.35);
-  background: rgba(249, 115, 22, 0.04);
+  border-color: rgba(249, 115, 22, 0.24);
+  background: rgba(249, 115, 22, 0.03);
 }
 
 .project-image {
@@ -104,7 +104,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1.2rem;
+  gap: 1rem;
   padding: 1.15rem;
 }
 
@@ -135,15 +135,15 @@
 .modal-skill-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.45rem;
+  gap: 0.5rem;
 }
 
 .skill-tag {
-  border: 1px solid rgba(249, 115, 22, 0.3);
+  border: 1px solid rgba(249, 115, 22, 0.22);
   border-radius: 999px;
   padding: 0.25rem 0.6rem;
   color: var(--accent);
-  background: rgba(249, 115, 22, 0.08);
+  background: rgba(249, 115, 22, 0.04);
   font-size: 0.78rem;
   font-weight: 700;
 }
@@ -168,7 +168,7 @@
   background: var(--bg);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-xs);
 }
 
 .modal-close-btn {
@@ -180,16 +180,16 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--border-subtle);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-sm);
   color: var(--text-main);
-  background: var(--bg-light);
+  background: rgba(255, 255, 255, 0.02);
   cursor: pointer;
   z-index: 10;
 }
 
 .modal-header {
-  padding: 1.5rem;
+  padding: 1.4rem;
   border-bottom: 1px solid var(--border-subtle);
 }
 
@@ -216,22 +216,22 @@
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  border: 1px solid var(--border-subtle);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-sm);
   padding: 0.45rem 0.7rem;
-  color: var(--text-main);
-  background: rgba(255, 255, 255, 0.035);
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.02);
   text-decoration: none;
   font-size: 0.9rem;
 }
 
 .modal-body {
-  padding: 1.5rem;
+  padding: 1.4rem;
 }
 
 .modal-video {
   width: 100%;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.15rem;
   overflow: hidden;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
@@ -246,14 +246,14 @@
 }
 
 .modal-description {
-  margin: 0 0 1.35rem;
+  margin: 0 0 1.2rem;
   color: var(--text-muted);
   font-size: 1rem;
   line-height: 1.7;
 }
 
 .modal-section {
-  margin-bottom: 1.35rem;
+  margin-bottom: 1.2rem;
 }
 
 .modal-section h4 {
@@ -330,7 +330,7 @@
 
   .projects-grid {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
+    gap: 1.1rem;
   }
 
   .project-card-button {

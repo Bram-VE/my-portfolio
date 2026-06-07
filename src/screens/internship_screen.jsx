@@ -3,9 +3,19 @@ import "../styles/internship.css";
 import "../styles/animations.css";
 
 import { useEffect } from "react";
-import { FaDownload, FaExternalLinkAlt, FaFilePdf } from "react-icons/fa";
+import {
+  FaCode,
+  FaDownload,
+  FaExternalLinkAlt,
+  FaFilePdf,
+  FaLayerGroup,
+  FaUsers,
+} from "react-icons/fa";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+
+import landingPageImage from "../assets/images/stage/landing_page.png";
+import detailPageImage from "../assets/images/stage/detail_set_page.png";
 
 const documents = [
   {
@@ -28,6 +38,27 @@ const documents = [
   },
 ];
 
+const highlights = [
+  {
+    icon: FaUsers,
+    title: "Built for children and caregivers",
+    description:
+      "A system designed to be easy to use for people who want to quickly find, reserve, or manage a set.",
+  },
+  {
+    icon: FaCode,
+    title: "Backend focus",
+    description:
+      "I worked mainly on the .NET side and helped build the technical structure of the project.",
+  },
+  {
+    icon: FaLayerGroup,
+    title: "From idea to a working product",
+    description:
+      "The project evolved into a practical tool with clear flows and a polished interface.",
+  },
+];
+
 export default function InternshipScreen() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -38,7 +69,7 @@ export default function InternshipScreen() {
       <Navbar />
 
       <section className="internship-hero fadeIn">
-        <div className="internship-hero-content">
+        <div className="internship-hero-content foldOpen">
           <div className="internship-hero-copy">
             <p className="section-kicker">Internship</p>
             <h1>dotNET lab - Appie's Legobib</h1>
@@ -47,24 +78,44 @@ export default function InternshipScreen() {
               reservation and inventory system for a Lego library used by children
               in long-term hospital care.
             </p>
-          </div>
 
-          <div className="internship-brand-card">
-            <img
-              src="/stage/DotNETlab_Logo.gif"
-              alt="dotNET lab logo"
-              className="internship-brand-logo"
-            />
-            <div>
-              <h2>About dotNET lab</h2>
-              <p>
-                dotNET lab is an IT consultancy bureau that helps KMO's and
-                mid-market organizations with software, AI, and IT teams. They
-                combine consultancy, managed services, training, and Try & Hire
-                to help clients build practical solutions and innovate safely.
-              </p>
+            <div className="internship-meta-row">
+              <span className="internship-meta-pill">.NET backend</span>
+              <span className="internship-meta-pill">UX for a real audience</span>
+              <span className="internship-meta-pill">Team project</span>
             </div>
           </div>
+
+          <div className="internship-hero-media" aria-hidden="true">
+            <img
+              src={landingPageImage}
+              alt=""
+              className="internship-hero-image internship-hero-image-large"
+            />
+            <img
+              src={detailPageImage}
+              alt=""
+              className="internship-hero-image internship-hero-image-small"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="internship-highlights">
+        <div className="highlight-grid">
+          {highlights.map((highlight) => {
+            const Icon = highlight.icon;
+
+            return (
+              <article className="highlight-card" key={highlight.title}>
+                <div className="highlight-icon-wrap" aria-hidden="true">
+                  <Icon className="highlight-icon" />
+                </div>
+                <h3>{highlight.title}</h3>
+                <p>{highlight.description}</p>
+              </article>
+            );
+          })}
         </div>
       </section>
 

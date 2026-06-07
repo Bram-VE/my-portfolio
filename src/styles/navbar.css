@@ -7,12 +7,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0.9rem 1.5rem;
   border-radius: var(--space-md);
-  background: rgba(20, 20, 30, 0.85);
+  background: rgba(20, 20, 30, 0.78);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 18px rgba(0, 0, 0, 0.22);
   z-index: 100;
 }
 
@@ -27,8 +27,8 @@
 .navbar-right > button,
 .navbar-dropdown button,
 .navbar .resume-navbar-button {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.9);
   font-weight: 500;
@@ -38,7 +38,7 @@
   transition: all 0.25s ease;
   text-decoration: none;
   height: 40px;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-xs);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -47,11 +47,11 @@
 .navbar-left > button:hover,
 .navbar-right > button:hover,
 .navbar .resume-navbar-button:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.25);
   color: #fff;
   transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-xs);
 }
 
 .navbar-left > button:active,
@@ -83,11 +83,11 @@
   position: absolute;
   top: calc(100% + 0.5rem);
   right: 1rem;
-  background: rgba(25, 25, 35, 0.95);
+  background: rgba(25, 25, 35, 0.92);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
   padding: 0.75rem;
   min-width: 180px;
   animation: slideDown 0.25s ease;
@@ -109,19 +109,19 @@
   width: 100%;
   text-align: left;
   margin: 0.25rem 0;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .navbar-dropdown button:hover,
 .navbar-dropdown .resume-navbar-button:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
   border-color: rgba(255, 255, 255, 0.2);
 }
 
 @media (max-width: 768px) {
   .navbar {
-    padding: 0.75rem 1rem;
+    padding: 0.7rem 0.9rem;
   }
 
   .navbar-right {
@@ -140,7 +140,7 @@
   .navbar-left > button,
   .navbar-right > button,
   .navbar .resume-navbar-button {
-    padding: 0.55rem 1rem;
+    padding: 0.52rem 0.95rem;
     font-size: 0.95rem;
   }
 }

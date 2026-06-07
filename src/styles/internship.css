@@ -1,29 +1,57 @@
 @import "./design-tokens.css";
 
 .internship-page {
+  position: relative;
+  isolation: isolate;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--space-lg) var(--space-xl);
 }
 
+.internship-page::before,
+.internship-page::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 999px;
+  filter: blur(28px);
+  opacity: 0.38;
+}
+
+.internship-page::before {
+  top: 5rem;
+  right: -8rem;
+  width: 18rem;
+  height: 18rem;
+  background: rgba(249, 115, 22, 0.1);
+}
+
+.internship-page::after {
+  left: -10rem;
+  top: 14rem;
+  width: 22rem;
+  height: 22rem;
+  background: rgba(96, 165, 250, 0.06);
+}
+
 .internship-hero {
-  position: relative;
-  overflow: hidden;
-  margin-top: var(--space-md);
-  margin-bottom: var(--space-lg);
-  padding: 2rem 0;
+  margin-top: 1.25rem;
+  margin-bottom: 2.5rem;
+  padding: 2.4rem 0 1.4rem;
 }
 
 .internship-hero-content {
   display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.9fr);
-  gap: 1.25rem;
-  align-items: start;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: 2.25rem;
+  align-items: center;
 }
 
 .internship-hero-copy {
   min-width: 0;
+  max-width: 52rem;
 }
 
 .internship-hero h1 {
@@ -36,56 +64,127 @@
 
 .internship-hero p:not(.section-kicker) {
   max-width: 760px;
-  margin: 1rem 0 0;
+  margin: 1.1rem 0 0;
   color: var(--text-muted);
   font-size: 1.04rem;
   line-height: 1.75;
 }
 
-.internship-brand-card {
-  display: grid;
-  gap: 0.9rem;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
+.internship-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.45rem;
 }
 
-.internship-brand-card h2 {
-  margin-bottom: 0.45rem;
-  color: var(--text-highlight);
+.internship-meta-pill {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  padding: 0.45rem 0.75rem;
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.02);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.internship-hero-media {
+  position: relative;
+  min-width: 0;
+  height: clamp(22rem, 33vw, 31rem);
+}
+
+.internship-hero-image {
+  position: absolute;
+  display: block;
+  width: min(76%, 500px);
+  height: clamp(13.5rem, 19vw, 17.5rem);
+  max-width: none;
+  border-radius: 1rem;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0 22px 45px rgba(2, 6, 23, 0.22);
+}
+
+.internship-hero-image-large {
+  top: 0;
+  right: 8%;
+  opacity: 1;
+  transform: rotate(3deg);
+  border: 1px solid var(--border-subtle);
+}
+
+.internship-hero-image-small {
+  right: 2%;
+  bottom: 0;
+  opacity: 1;
+  transform: rotate(-5deg);
+  border: 1px solid var(--border-subtle);
+}
+
+.internship-highlights {
+  margin-bottom: 2.5rem;
+}
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.highlight-card {
+  padding: 1.25rem;
+  background: var(--bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+}
+
+.highlight-icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  margin-bottom: 0.9rem;
+  color: var(--accent);
+  background: rgba(249, 115, 22, 0.06);
+  border: 1px solid rgba(249, 115, 22, 0.1);
+  border-radius: 0.9rem;
+}
+
+.highlight-icon {
   font-size: 1.1rem;
 }
 
-.internship-brand-card p {
-  margin-bottom: 0;
-  color: var(--text-muted);
-  line-height: 1.65;
+.highlight-card h3 {
+  margin-bottom: 0.55rem;
+  color: var(--text-highlight);
+  font-size: 1.08rem;
 }
 
-.internship-brand-logo {
-  width: 100%;
-  max-width: 220px;
-  height: auto;
-  display: block;
-  object-fit: contain;
+.highlight-card p {
+  margin-bottom: 0;
+  color: var(--text-muted);
+  line-height: 1.68;
 }
 
 .internship-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.25rem;
-  margin-bottom: var(--space-lg);
+  gap: 1.4rem;
+  margin-bottom: 2.5rem;
 }
 
 .internship-panel {
   position: relative;
   overflow: hidden;
-  padding: 1.35rem;
+  padding: 1.45rem;
   background: var(--bg);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-xs);
 }
 
 .internship-panel h2 {
@@ -105,10 +204,11 @@
 
 .internship-documents {
   width: 100%;
+  margin-bottom: 2.5rem;
 }
 
 .internship-section-header {
-  margin-bottom: 1rem;
+  margin-bottom: 1.1rem;
 }
 
 .internship-section-header h2 {
@@ -120,7 +220,7 @@
 .document-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1rem;
+  gap: 1.15rem;
 }
 
 .document-card {
@@ -130,13 +230,13 @@
   grid-template-areas:
     "icon content"
     "actions actions";
-  gap: 0.9rem 1rem;
+  gap: 1rem 1.05rem;
   align-items: start;
-  padding: 1.1rem;
+  padding: 1.15rem;
   background: var(--bg);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-xs);
 }
 
 .document-icon {
@@ -178,11 +278,11 @@
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  border: 1px solid var(--border-subtle);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-sm);
   padding: 0.48rem 0.75rem;
-  color: var(--text-main);
-  background: rgba(255, 255, 255, 0.035);
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.02);
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 600;
@@ -190,8 +290,8 @@
 
 .document-actions a:hover {
   color: var(--text-highlight);
-  border-color: rgba(249, 115, 22, 0.3);
-  background: rgba(249, 115, 22, 0.08);
+  border-color: rgba(249, 115, 22, 0.25);
+  background: rgba(249, 115, 22, 0.05);
 }
 
 .internship-page a:focus-visible,
@@ -201,8 +301,25 @@
 }
 
 @media (max-width: 900px) {
-  .internship-grid {
+  .highlight-grid,
+  .internship-grid,
+  .internship-hero-content {
     grid-template-columns: 1fr;
+  }
+
+  .internship-hero-media {
+    height: clamp(18rem, 58vw, 28rem);
+    margin-top: 1rem;
+  }
+
+  .internship-hero-image-large {
+    width: min(54%, 360px);
+    right: 8%;
+  }
+
+  .internship-hero-image-small {
+    width: min(54%, 360px);
+    right: 2%;
   }
 }
 
@@ -214,12 +331,8 @@
     padding: 0;
   }
 
-  .internship-hero-content {
-    grid-template-columns: 1fr;
-  }
-
   .internship-hero {
-    padding: 1.35rem 0;
+    padding: 1.45rem 0 1.05rem;
   }
 
   .internship-hero h1 {
@@ -231,16 +344,8 @@
     font-size: 1rem;
   }
 
-  .internship-brand-card {
-    gap: 0.8rem;
-  }
-
-  .internship-brand-logo {
-    max-width: 180px;
-  }
-
   .internship-panel {
-    padding: 1.15rem;
+    padding: 1.2rem;
   }
 
   .internship-panel h2 {
@@ -254,28 +359,40 @@
   .document-grid {
     grid-template-columns: 1fr;
   }
-
-  .document-card {
-    grid-template-columns: auto 1fr;
-  }
 }
 
 @media (max-width: 480px) {
   .internship-hero {
-    padding: 1.1rem 0;
+    padding: 1rem 0 0.9rem;
   }
 
-  .internship-brand-card {
-    padding: 0.9rem;
+  .internship-meta-row {
+    gap: 0.45rem;
   }
 
-  .internship-brand-logo {
-    max-width: 150px;
+  .internship-meta-pill {
+    width: 100%;
+    justify-content: center;
   }
 
+  .highlight-card,
   .internship-panel,
   .document-card {
     border-radius: var(--radius-md);
+  }
+
+  .internship-hero-media {
+    height: clamp(15rem, 68vw, 22rem);
+  }
+
+  .internship-hero-image-large {
+    width: min(54%, 240px);
+    transform: rotate(2deg);
+  }
+
+  .internship-hero-image-small {
+    width: min(54%, 240px);
+    transform: rotate(-4deg);
   }
 
   .document-card {

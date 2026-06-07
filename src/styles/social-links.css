@@ -1,6 +1,6 @@
 .social-links {
   display: flex;
-  gap: var(--space-md);
+  gap: 0.65rem;
   flex-wrap: wrap;
 }
 
@@ -10,7 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--bg-dark);
+  background: rgba(255, 255, 255, 0.02);
   color: var(--accent);
   border-radius: var(--radius-md);
   transition: all 0.3s ease;
@@ -26,9 +26,9 @@
 }
 
 .social-links a:hover {
-  background: var(--accent);
-  color: var(--bg-dark);
-  transform: scale(1.15);
+  background: rgba(249, 115, 22, 0.12);
+  color: var(--accent);
+  transform: scale(1.06);
 }
 
 @media (max-width: 768px) {
@@ -42,7 +42,7 @@
   .social-links {
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
-    gap: var(--space-sm);
+    gap: 0.45rem;
     padding: 0;
   }
 }
